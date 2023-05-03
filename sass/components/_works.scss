@@ -1,0 +1,117 @@
+.works {
+    margin-top: 2rem;
+
+    #tabSwitcher {
+        @include row;
+        gap: .3rem;
+        background-color: var(--text-color-lighten);
+        padding: .3rem;
+        border-radius: var(--radius);
+
+        li {
+            cursor: pointer;
+            width: 160px;
+            border-radius: var(--radius);
+            padding: 1.25rem 0;
+        }
+
+        li.active {
+            background-color: var(--body-color);
+        }
+    }
+}
+
+.works .projects,
+.works .skills {
+    margin-top: 2rem;
+}
+
+.works .projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    .project {
+        width: 400px;
+        height: 240px;
+        position: relative;
+
+        background: url(../../assets/img/project2.jpg);
+        border-radius: var(--radius);
+
+        overflow: hidden;
+
+        .content {
+            width: calc(100% - 2rem);
+            height: calc(100% - 2rem);
+
+            background: rgba(0, 0, 0, 0.671);
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+
+            padding: 1rem;
+            border-radius: var(--radius);
+
+            justify-content: end;
+            align-items: start;
+            gap: 1rem;
+
+            transition: .5s bottom;
+
+            span {
+                color: var(--text-color-light);
+            }
+
+            .title {
+                font-size: calc(var(--font-xl-size) + .75rem);
+                margin-top: -.5rem;
+            }
+
+            a.open-this-project {
+                background-color: var(--first-color);
+                border: 1px solid var(--first-color);
+                border-radius: var(--radius);
+                padding: .15rem .25rem;
+                line-height: 10px;
+            }
+        }
+
+        * {
+            color: white;
+        }
+    }
+
+    .project:hover .content {
+        bottom: 0;
+    }
+}
+
+.works .skills {
+    @include row;
+    gap: 3rem;
+
+    .title-sec {
+        font-size: var(--font-xl-size);
+    }
+
+    .content {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem
+    }
+
+    .skill {
+        @include row;
+        gap: .2rem;
+        align-items: top;
+
+        text-align: left;
+
+        .skill-name {
+            font-size: var(--font-l-size);
+            margin-bottom: .3rem;
+        }
+    }
+}

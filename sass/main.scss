@@ -1,0 +1,13 @@
+@import "base/reset";
+@import "base/variables";
+@import "base/fonts";
+@import "base/default";
+
+@import "utils/mixin";
+@import "utils/usefull_classes.scss";
+
+@import "components/header";
+@import "components/body";
+@import "components/footer";
+
+@import "responsive";

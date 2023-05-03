@@ -1,0 +1,53 @@
+// Laptop (Small) Size : 1024px - 1px
+@media screen and (max-width : 1023px) {
+    .project {
+        width: 360px !important;
+    }
+}
+
+// Tablet (Normal) Size : 768px - 1px
+@media screen and (max-width : 767px) {
+    .projects {
+        grid-template-columns: 1fr !important;
+    }
+
+    .project {
+        width: 390px !important;
+    }
+}
+
+// Mobile (Large) Size : 425px - 1px
+@media screen and (max-width : 424px) {
+    .project {
+        width: 350px !important;
+        height: 220px !important;
+
+        .content {
+            bottom: 0% !important;
+        }
+    }
+
+    .experiences {
+        gap: 2rem !important;
+    }
+
+    #tabSwitcher {
+        li {
+            width: 130px !important;
+        }
+    }
+}
+
+// Mobile (Medium) Size : 375px - 1px
+@media screen and (max-width : 374px) {
+    .project {
+        width: 300px !important;
+        height: 180px !important;
+    }
+    #downloadCV span span {
+        display: none;
+    }
+    .experiences {
+        gap: 1.25rem !important;
+    }
+}

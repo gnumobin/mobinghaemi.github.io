@@ -1,0 +1,133 @@
+.profile {
+    gap: 2rem;
+
+    .me {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .author-pic {
+            border: 2px solid #333;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            padding: .2rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                transition: var(--transition) transform;
+            }
+        }
+
+        .author-pic:hover img {
+            transform: scale(1.3);
+        }
+
+        // .author-name {
+
+        // }
+
+        .author-name::after {
+            content: 'Web Developer';
+            display: block;
+            font-size: var(--font-xs-size);
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: .5rem;
+        }
+
+        .social-media {
+            @include row;
+            justify-content: center;
+
+            i {
+                border-bottom: 1px solid transparent;
+                transition: var(--transition);
+                transition-property: color, border;
+            }
+
+            i:hover {
+                color: var(--first-color-alt);
+                border-bottom: 1px solid var(--first-color);
+            }
+
+        }
+
+    }
+
+    .experiences {
+        @include row;
+        gap: 4rem;
+
+        div {
+            width: 33.3%;
+        }
+
+        p {
+            margin-top: .5rem;
+            line-height: 18px;
+            font-size: var(--font-s-size);
+            transition: var(--transition) color;
+        }
+
+        p:hover {
+            color: var(--text-bold-color)
+        }
+    }
+
+    .contact {
+        @include row;
+        align-items: center;
+
+        .resume {
+            button#downloadCV {
+                background-color: var(--first-color);
+                border: 1px solid var(--first-color);
+                padding: .75rem 1.1rem;
+                font-size: var(--font-l-size);
+
+                box-shadow: 0 8px 24px hsla(207, 90%, 61%, .25);
+
+                color: white;
+                transition: .25s background;
+
+                i {
+                    color: white;
+                    font-size: var(--font-xl-size);
+                }
+            }
+
+            button:hover {
+                background: transparent !important;
+
+                * {
+                    color: var(--text-bold-color) !important
+                }
+            }
+        }
+
+        .message-me {
+            @include row;
+            gap: .2rem;
+
+            button {
+                background-color: var(--text-color-lighten);
+
+                a {
+                    padding: .4rem .6rem;
+                }
+
+                i {
+                    font-size: calc(var(--font-xl-size) + .4rem);
+                }
+            }
+
+            button:hover {
+                background-color: var(--text-color-light);
+            }
+        }
+    }
+}
