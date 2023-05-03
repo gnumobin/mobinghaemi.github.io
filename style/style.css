@@ -60,9 +60,7 @@ table {
   --font-s-size: .813rem;
   --font-xs-size: .75rem;
   --first-color: #42a5f5;
-  --first-color-alt: #2f9bf4;
-  --text-color-light: #bac0c4;
-  --text-color-lighten: #e9ebec;
+  --container-color: #e9ebec;
 }
 
 @font-face {
@@ -92,6 +90,8 @@ body {
 * {
   font-family: inherit;
   font-size: var(--font-m-size);
+  transition: var(--transition);
+  transition-property: color, background;
 }
 
 button {
@@ -215,7 +215,7 @@ header .title {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  transition: var(--transition) transform;
+  transition-property: transform;
 }
 .profile .me .author-pic:hover img {
   transform: scale(1.3);
@@ -235,11 +235,9 @@ header .title {
 }
 .profile .me .social-media i {
   border-bottom: 1px solid transparent;
-  transition: var(--transition);
-  transition-property: color, border;
 }
 .profile .me .social-media i:hover {
-  color: var(--first-color-alt);
+  color: var(--first-color);
   border-bottom: 1px solid var(--first-color);
 }
 .profile .experiences {
@@ -254,7 +252,6 @@ header .title {
   margin-top: 0.5rem;
   line-height: 18px;
   font-size: var(--font-s-size);
-  transition: var(--transition) color;
 }
 .profile .experiences p:hover {
   color: var(--text-bold-color);
@@ -271,7 +268,6 @@ header .title {
   font-size: var(--font-l-size);
   box-shadow: 0 8px 24px hsla(207, 90%, 61%, 0.25);
   color: white;
-  transition: 0.25s background;
 }
 .profile .contact .resume button#downloadCV i {
   color: white;
@@ -289,7 +285,8 @@ header .title {
   gap: 0.2rem;
 }
 .profile .contact .message-me button {
-  background-color: var(--text-color-lighten);
+  background-color: var(--container-color);
+  border: 1px solid var(--container-color);
 }
 .profile .contact .message-me button a {
   padding: 0.4rem 0.6rem;
@@ -298,7 +295,7 @@ header .title {
   font-size: calc(var(--font-xl-size) + 0.4rem);
 }
 .profile .contact .message-me button:hover {
-  background-color: var(--text-color-light);
+  background-color: transparent;
 }
 
 .works {
@@ -308,13 +305,13 @@ header .title {
   display: flex;
   gap: 1rem;
   gap: 0.3rem;
-  background-color: var(--text-color-lighten);
+  background-color: var(--container-color);
   padding: 0.3rem;
   border-radius: var(--radius);
 }
 .works #tabSwitcher li {
   cursor: pointer;
-  width: 160px;
+  width: 175px;
   border-radius: var(--radius);
   padding: 1.25rem 0;
 }
@@ -447,6 +444,12 @@ footer em * {
   .experiences {
     gap: 1.25rem !important;
   }
+}
+.dark-theme {
+  --text-bold-color: #f1f2f4;
+  --text-color: #b8c0c7;
+  --container-color: #171f26;
+  --body-color: hsl(207, 40%, 8%);
 }
 
 /*# sourceMappingURL=style.css.map */

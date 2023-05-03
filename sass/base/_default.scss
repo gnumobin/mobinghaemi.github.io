@@ -11,8 +11,8 @@ body {
 * {
     font-family: inherit;
     font-size: var(--font-m-size);
-    // transition: .5s;
-    // transition-property: color , background;
+    transition: var(--transition);
+    transition-property: color , background;
 }
 button {
     cursor: pointer;

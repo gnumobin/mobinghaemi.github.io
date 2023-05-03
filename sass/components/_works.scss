@@ -4,13 +4,13 @@
     #tabSwitcher {
         @include row;
         gap: .3rem;
-        background-color: var(--text-color-lighten);
+        background-color: var(--container-color);
         padding: .3rem;
         border-radius: var(--radius);
 
         li {
             cursor: pointer;
-            width: 160px;
+            width: 175px;
             border-radius: var(--radius);
             padding: 1.25rem 0;
         }
