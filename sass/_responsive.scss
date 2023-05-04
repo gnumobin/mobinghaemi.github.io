@@ -3,6 +3,9 @@
     .project {
         width: 360px !important;
     }
+    .skills {
+        flex-direction: column;
+    }
 }
 
 // Tablet (Normal) Size : 768px - 1px
@@ -13,6 +16,9 @@
 
     .project {
         width: 390px !important;
+    }
+    .skills .content{
+        grid-template-columns: repeat(2 , 1fr) !important;
     }
 }
 

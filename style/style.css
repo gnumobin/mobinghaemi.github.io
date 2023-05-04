@@ -384,7 +384,7 @@ header .title {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 2.5rem;
 }
 .works .skills .skill {
   display: flex;
@@ -409,6 +409,9 @@ footer em * {
   .project {
     width: 360px !important;
   }
+  .skills {
+    flex-direction: column;
+  }
 }
 @media screen and (max-width: 767px) {
   .projects {
@@ -416,6 +419,9 @@ footer em * {
   }
   .project {
     width: 390px !important;
+  }
+  .skills .content {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 @media screen and (max-width: 424px) {
