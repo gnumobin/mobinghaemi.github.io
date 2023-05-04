@@ -1,10 +1,17 @@
 const $ = Q => document.querySelector(Q);
 // Variables
-const themeSwitchBtn = $('#themeSwitch input');
-// Events
 const body = $('body');
+
+const themeSwitchBtn = $('#themeSwitch input');
+// tabSwitcher El
+const tabSwitcherEl = [...$('#tabSwitcher').children];
+// Get tabs and dependencies
+const tabsEl = [...$('.tabs').children]
+// Events
 // Switch Theme (Checkbox) Ev
 themeSwitchBtn.addEventListener('click', themeSwitchFunc)
+// TabSwitcher Childs (All) Events
+tabSwitcherEl.forEach((el, index) => el.addEventListener('click', tabsHandlerFunc.bind(this, index)))
 
 // Funcs
 
@@ -54,3 +61,14 @@ const showElAnimation = () => {
 
 }
 showElAnimation()
+
+// Tabs Handle Function
+function tabsHandlerFunc(index, e) {
+    // hidden all tabs
+    tabsEl.forEach((_, i) => tabsEl[i].classList.add('hidden'))
+    // remove active class on all buttons 
+    tabSwitcherEl.forEach((btn, i) => btn.classList.remove('active'))
+    // add styles for current tab and btn
+    e.target.classList.add('active')
+    tabsEl[index].classList.remove('hidden')
+}
