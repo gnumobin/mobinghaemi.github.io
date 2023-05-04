@@ -33,3 +33,24 @@ function callThemeFromLS() {
     body.classList.toggle(`${theme}-theme`);
     themeSwitchBtn.checked = condition;
 }
+// Add ScrollReveal Animations (Load Elements Animations)
+const showElAnimation = () => {
+    const SR = ScrollReveal({
+        origin: 'top',
+        distance: '60px',
+        duration: 2500,
+        delay: 100
+    })
+
+    SR.reveal('header')
+    SR.reveal('.author-pic', { delay: 100 })
+    SR.reveal('.author-name', { delay: 300 })
+    SR.reveal('.social-media', { delay: 400 })
+    SR.reveal('.experiences', { delay: 500 })
+    SR.reveal('.contact', { delay: 600 })
+    SR.reveal('#tabSwitcher', { delay: 700 })
+    SR.reveal('.tabs', { delay: 800 })
+    // SR.reveal('footer', {delay : 800})
+
+}
+showElAnimation()
