@@ -57,3 +57,12 @@
         gap: 1.25rem !important;
     }
 }
+
+
+// Mobile (Small) Size : 325px - 1px
+@media screen and (max-width : 324px) {
+    .project {
+        width: 290px !important;
+        height: 180px !important;
+    }
+}

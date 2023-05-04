@@ -148,6 +148,10 @@ h1 {
   display: none !important;
 }
 
+.non-show-mobile {
+  display: block;
+}
+
 header {
   direction: rtl;
 }
@@ -449,6 +453,12 @@ footer em * {
   }
   .experiences {
     gap: 1.25rem !important;
+  }
+}
+@media screen and (max-width: 324px) {
+  .project {
+    width: 290px !important;
+    height: 180px !important;
   }
 }
 .dark-theme {
