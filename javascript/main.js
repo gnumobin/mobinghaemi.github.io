@@ -64,11 +64,11 @@ showElAnimation()
 
 // Tabs Handle Function
 function tabsHandlerFunc(index, e) {
+    const activeEl = $('.active');
     // hidden all tabs
     tabsEl.forEach((_, i) => tabsEl[i].classList.add('hidden'))
-    // remove active class on all buttons 
-    tabSwitcherEl.forEach((btn, i) => btn.classList.remove('active'))
-    // add styles for current tab and btn
-    e.target.classList.add('active')
+    // Show index Section
     tabsEl[index].classList.remove('hidden')
+    // Set active on active li , set active el position
+    index ? activeEl.classList.add('position') : activeEl.classList.remove('position')
 }

@@ -128,7 +128,7 @@ h1 {
   background-color: hsl(207, 8%, 44%);
 }
 
-button, li {
+button, li, img {
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -212,6 +212,7 @@ header .title {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 8px 24px hsla(207, 90%, 61%, 0.25);
 }
 .profile .me .author-pic img {
   width: 151px;
@@ -311,6 +312,7 @@ header .title {
   background-color: var(--container-color);
   padding: 0.3rem;
   border-radius: var(--radius);
+  position: relative;
 }
 .works #tabSwitcher li {
   cursor: pointer;
@@ -319,7 +321,16 @@ header .title {
   padding: 1.25rem 0;
 }
 .works #tabSwitcher li.active {
+  padding: 1.75rem 0;
+  width: 50% !important;
   background-color: var(--body-color);
+  position: absolute;
+  z-index: -1;
+  left: 5px;
+  transition: var(--transition) left;
+}
+.works #tabSwitcher li.active.position {
+  left: 49% !important;
 }
 
 .works .projects,

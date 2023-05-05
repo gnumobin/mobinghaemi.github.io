@@ -23,17 +23,17 @@ export const projectsData = [
 export const skillsData = [
     // Section 1 (Front)
     [
-        { title: 'HTML', label: 'basic', icon: 'bi bi-filetype-html' },
-        { title: 'CSS', label: 'basic', icon: 'bi bi-filetype-css' },
-        { title: 'Sass/Scss', label: 'basic', icon: 'bi bi-filetype-scss' },
-        { title: 'Javascript', label: 'basic', icon: 'bi bi-filetype-js' },
-        { title: 'React', label: 'basic', icon: 'bi bi-filetype-jsx' },
+        { title: 'HTML', label: 'advanced', icon: 'bi bi-filetype-html' },
+        { title: 'CSS', label: 'advanced', icon: 'bi bi-filetype-css' },
+        { title: 'Sass/Scss', label: 'advanced', icon: 'bi bi-filetype-scss' },
+        { title: 'Javascript', label: 'advanced', icon: 'bi bi-filetype-js' },
+        { title: 'React', label: 'medium', icon: 'bi bi-filetype-jsx' },
     ],
     // Section 2 (Other)
     [
-        { title: 'Git', label: 'basic', icon: 'bi bi-git' },
-        { title: 'Linux', label: 'basic', icon: 'bi bi-app' },
-        { title: 'GJS', label: 'basic', icon: 'bi bi-magic' },
+        { title: 'Git', label: 'advanced', icon: 'bi bi-git' },
+        { title: 'Linux', label: 'medium', icon: 'bi bi-app' },
+        { title: 'GJS', label: 'medium', icon: 'bi bi-magic' },
         { title: 'React Native', label: 'basic', icon: 'bi bi-phone' }
     ]
 ]

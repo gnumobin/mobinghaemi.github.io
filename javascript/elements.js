@@ -41,7 +41,7 @@ const loadSkillsEl = skillsEl => {
             <i class="${skill.icon}"></i>
                 <div class="text">
                     <h2 class="skill-name">${skill.title}</h2>
-                    <span>advanced</span>
+                    <span>${skill.label}</span>
                 </div>
             </div> `
             // Add Skill to html
