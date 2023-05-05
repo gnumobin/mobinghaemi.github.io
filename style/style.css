@@ -148,10 +148,6 @@ h1 {
   display: none !important;
 }
 
-.non-show-mobile {
-  display: block;
-}
-
 header {
   direction: rtl;
 }

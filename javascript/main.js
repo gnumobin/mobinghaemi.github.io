@@ -33,7 +33,7 @@ function themeSwitchFunc(e) {
 // Read Saved theme from localStorage
 function callThemeFromLS() {
     // create default theme for prevention bug
-    const defaultObj = { name: 'dark', condition: true };
+    const defaultObj = { name: 'light', condition: true };
     // Get Saved theme from local storage
     const { name: theme, condition } = localStorage.getItem('theme') ? JSON.parse(localStorage.getItem('theme')) : defaultObj;
     // set saved theme styles on website
