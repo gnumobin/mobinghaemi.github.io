@@ -12,7 +12,9 @@ body {
     font-family: inherit;
     font-size: var(--font-m-size);
     transition: var(--transition);
-    transition-property: color , background;
+    transition-property: color , background , border-color;
+
+    -webkit-tap-highlight-color: transparent;
 }
 button {
     cursor: pointer;
@@ -51,4 +53,10 @@ h1 {
 }
 ::-webkit-scrollbar-thumb:hover {
     background-color: hsl(207, 8%, 44%);
+}
+
+button , li {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }

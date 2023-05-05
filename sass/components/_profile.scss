@@ -7,23 +7,29 @@
         gap: 2rem;
 
         .author-pic {
-            border: 2px solid #333;
+            border: 2px inset hsla(207, 90%, 61%, .7);
             border-radius: 50%;
             width: 150px;
             height: 150px;
             overflow: hidden;
             padding: .2rem;
 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             img {
-                width: 100%;
-                height: 100%;
+                width: 151px;
+                height: 151px;
+                image-rendering: optimizeSpeed;
                 border-radius: 50%;
                 transition-property: transform;
+
             }
         }
 
         .author-pic:hover img {
-            transform: scale(1.3);
+            transform: scale(1.1);
         }
 
         // .author-name {

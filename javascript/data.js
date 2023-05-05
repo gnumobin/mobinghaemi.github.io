@@ -34,6 +34,6 @@ export const skillsData = [
         { title: 'Git', label: 'basic', icon: 'bi bi-git' },
         { title: 'Linux', label: 'basic', icon: 'bi bi-app' },
         { title: 'GJS', label: 'basic', icon: 'bi bi-magic' },
-        { title: 'React Native', label: 'basic', icon: 'bi bi-magic' }
+        { title: 'React Native', label: 'basic', icon: 'bi bi-phone' }
     ]
 ]
