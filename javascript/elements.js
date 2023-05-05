@@ -18,6 +18,7 @@ const loadProjectsEl = projectsEl => {
         // Create Project Codes
         const html = `
             <div class="project">
+            <img class="project-bg" src="../assets/img/${project.picture}" alt="current project background">
                 <div class="content center">
                     <span>${project.tag}</span>
                     <h1 class="title">${project.name}</h1>
@@ -37,7 +38,7 @@ const loadSkillsEl = skillsEl => {
             // Create Project Codes
             const html = `
             <div class="skill">
-            <i class="bi bi-magic"></i>
+            <i class="${skill.icon}"></i>
                 <div class="text">
                     <h2 class="skill-name">${skill.title}</h2>
                     <span>advanced</span>
