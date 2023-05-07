@@ -27,10 +27,6 @@
     .project {
         width: 350px !important;
         height: 220px !important;
-
-        .content {
-            bottom: 0% !important;
-        }
     }
 
     .experiences {
@@ -64,5 +60,11 @@
     .project {
         width: 290px !important;
         height: 180px !important;
+    }
+}
+
+@media (pointer:none), (pointer:coarse) {
+    .project .content {
+        bottom: 0% !important;
     }
 }

@@ -32,8 +32,14 @@ function themeSwitchFunc(e) {
 }
 // Read Saved theme from localStorage
 function callThemeFromLS() {
-    // create default theme for prevention bug
-    const defaultObj = { name: 'light', condition: true };
+    // create default theme for prevention bug and auto dark mode
+    let defaultObj = { name: 'light', condition: true };
+    // Check Auto dark mode or color scheme supported or not
+    if (window.matchMedia('(prefers-color-scheme)').media !== 'not all')
+        if (window.matchMedia('(prefers-color-scheme: dark)')) {
+            const darkModeEnabled = matchMedia('(prefers-color-scheme: dark)').matches;
+            darkModeEnabled ? defaultObj = { name: 'dark', condition: false } : defaultObj = { name: 'light', condition: true }
+        }
     // Get Saved theme from local storage
     const { name: theme, condition } = localStorage.getItem('theme') ? JSON.parse(localStorage.getItem('theme')) : defaultObj;
     // set saved theme styles on website
