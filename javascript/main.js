@@ -1,17 +1,31 @@
 const $ = Q => document.querySelector(Q);
 // Variables
 const body = $('body');
+const overlay = $('.overlay');
 
 const themeSwitchBtn = $('#themeSwitch input');
 // tabSwitcher El
 const tabSwitcherEl = [...$('#tabSwitcher').children];
 // Get tabs and dependencies
 const tabsEl = [...$('.tabs').children]
+// Author picture 
+const authorPictureEl = $('.author-pic');
+// Show Image Biggest El
+const imgShowEl = $('.img-show');
+// Close Image Biggest El Btn
+const closeImgShowBtn = $('#closeImgShow')
+
 // Events
 // Switch Theme (Checkbox) Ev
 themeSwitchBtn.addEventListener('click', themeSwitchFunc)
 // TabSwitcher Childs (All) Events
 tabSwitcherEl.forEach((el, index) => el.addEventListener('click', tabsHandlerFunc.bind(this, index)))
+// Click on author picture
+authorPictureEl.addEventListener('click', showAuthorPicture)
+// After Click overlay (close all element with z-index +1)
+overlay.addEventListener('click', overlayHandler)
+// close image biggest element
+closeImgShowBtn.addEventListener('click', overlayHandler)
 
 // Funcs
 
@@ -77,4 +91,14 @@ function tabsHandlerFunc(index, e) {
     tabsEl[index].classList.remove('hidden')
     // Set active on active li , set active el position
     index ? activeEl.classList.add('position') : activeEl.classList.remove('position')
+}
+// Show Biggest author picture 
+function showAuthorPicture() {
+    overlay.style.display = 'block'
+    imgShowEl.style.transform = 'translate(-50%, -50%) scale(1)'
+}
+// After Click on Overlay
+function overlayHandler() {
+    overlay.style.display = 'none'
+    imgShowEl.style.transform = 'translate(-50%, -50%) scale(0)'
 }

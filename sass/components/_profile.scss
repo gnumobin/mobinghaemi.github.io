@@ -20,6 +20,8 @@
 
             box-shadow: 0 8px 24px hsla(207, 90%, 61%, .25);
 
+            cursor: pointer;
+
             img {
                 width: 151px;
                 height: 151px;
@@ -88,22 +90,29 @@
 
         .resume {
             button#downloadCV {
-                background-color: var(--first-color);
-                border: 1px solid var(--first-color);
-                padding: .75rem 1.1rem;
+                background: none;
+                padding: 0;
                 font-size: var(--font-l-size);
+                border-radius: 0;
 
-                box-shadow: 0 8px 24px hsla(207, 90%, 61%, .25);
+                a {
+                    box-shadow: 0 8px 24px hsla(207, 90%, 61%, .25);
 
-                color: white;
+                    color: white;
+                    border: 1px solid var(--first-color);
+                    border-radius: var(--radius);
+
+                    background-color: var(--first-color);
+                    padding: .75rem 1.1rem;
+                }
 
                 i {
-                    color: white;
                     font-size: var(--font-xl-size);
+                    color: white;
                 }
             }
 
-            button:hover {
+            button:hover a {
                 background: transparent !important;
 
                 * {

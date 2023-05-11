@@ -17,6 +17,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  text-decoration: none;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -147,6 +148,37 @@ button, li, img {
   display: none !important;
 }
 
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 5;
+  inset: 0;
+  display: none;
+}
+
+.img-show {
+  width: 40%;
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: var(--transition) transform;
+}
+.img-show #closeImgShow {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+}
+.img-show img {
+  width: 100%;
+  border-radius: var(--radius);
+}
+
 header {
   direction: rtl;
 }
@@ -213,6 +245,7 @@ header .title {
   justify-content: center;
   align-items: center;
   box-shadow: 0 8px 24px hsla(207, 90%, 61%, 0.25);
+  cursor: pointer;
 }
 .profile .me .author-pic img {
   width: 151px;
@@ -265,21 +298,27 @@ header .title {
   align-items: center;
 }
 .profile .contact .resume button#downloadCV {
-  background-color: var(--first-color);
-  border: 1px solid var(--first-color);
-  padding: 0.75rem 1.1rem;
+  background: none;
+  padding: 0;
   font-size: var(--font-l-size);
+  border-radius: 0;
+}
+.profile .contact .resume button#downloadCV a {
   box-shadow: 0 8px 24px hsla(207, 90%, 61%, 0.25);
   color: white;
+  border: 1px solid var(--first-color);
+  border-radius: var(--radius);
+  background-color: var(--first-color);
+  padding: 0.75rem 1.1rem;
 }
 .profile .contact .resume button#downloadCV i {
-  color: white;
   font-size: var(--font-xl-size);
+  color: white;
 }
-.profile .contact .resume button:hover {
+.profile .contact .resume button:hover a {
   background: transparent !important;
 }
-.profile .contact .resume button:hover * {
+.profile .contact .resume button:hover a * {
   color: var(--text-bold-color) !important;
 }
 .profile .contact .message-me {
@@ -429,6 +468,9 @@ footer em * {
   .skills {
     flex-direction: column;
   }
+  .img-show {
+    width: 53%;
+  }
 }
 @media screen and (max-width: 767px) {
   .projects {
@@ -439,6 +481,9 @@ footer em * {
   }
   .skills .content {
     grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .img-show {
+    width: 72%;
   }
 }
 @media screen and (max-width: 424px) {
@@ -451,6 +496,9 @@ footer em * {
   }
   #tabSwitcher li {
     width: 130px !important;
+  }
+  .img-show {
+    width: 92%;
   }
 }
 @media screen and (max-width: 374px) {

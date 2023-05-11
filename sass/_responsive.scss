@@ -6,6 +6,9 @@
     .skills {
         flex-direction: column;
     }
+    .img-show {
+        width: 53%;
+    }
 }
 
 // Tablet (Normal) Size : 768px - 1px
@@ -13,12 +16,14 @@
     .projects {
         grid-template-columns: 1fr !important;
     }
-
     .project {
         width: 390px !important;
     }
     .skills .content{
         grid-template-columns: repeat(2 , 1fr) !important;
+    }
+    .img-show {
+        width: 72%;
     }
 }
 
@@ -37,6 +42,9 @@
         li {
             width: 130px !important;
         }
+    }
+    .img-show {
+        width: 92%;
     }
 }
 
