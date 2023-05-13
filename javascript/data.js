@@ -2,14 +2,14 @@
 export const projectsData = [
     {
         tag: 'web',
-        name: 'Vecia',
-        link: 'https://github.com/mobinghaemi/Vecia',
+        name: 'Vazheyab golden',
+        link: 'https://github.com/mobinghaemi/vazheyab-golden',
         picture : 'project-1.png'
     },
     {
         tag: 'web',
-        name: 'Vazheyab golden',
-        link: 'https://github.com/mobinghaemi/vazheyab-golden',
+        name: 'Vecia',
+        link: 'https://github.com/mobinghaemi/Vecia',
         picture : 'project-2.png'
     },
     {

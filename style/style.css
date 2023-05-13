@@ -82,6 +82,7 @@ body {
 
 * {
   font-family: inherit;
+  font-display: swap;
   font-size: var(--font-m-size);
   transition: var(--transition);
   transition-property: color, background, border-color;
@@ -100,7 +101,7 @@ button {
 }
 
 i {
-  font-size: 1.75rem;
+  font-size: 1.6rem;
   color: var(--text-bold-color);
   position: relative;
 }
@@ -402,6 +403,8 @@ header .title {
   left: 0;
   padding: 1rem;
   border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
   justify-content: end;
   align-items: start;
   gap: 1rem;
@@ -435,6 +438,8 @@ header .title {
 }
 .works .skills .title-sec {
   font-size: var(--font-xl-size);
+  color: var(--text-bold-color);
+  font-weight: 600;
 }
 .works .skills .content {
   margin-top: 2rem;
@@ -455,10 +460,28 @@ header .title {
 }
 
 footer {
-  margin: 2rem 0 0.5rem;
+  margin: 3rem 0 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 footer em * {
   font-weight: normal !important;
+}
+footer i {
+  font-size: 1rem;
+}
+footer address {
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: skyblue;
+}
+footer address * {
+  color: var(--text-color);
 }
 
 @media screen and (max-width: 1023px) {
@@ -491,6 +514,9 @@ footer em * {
     width: 350px !important;
     height: 220px !important;
   }
+  .project .title {
+    font-size: calc(var(--font-xl-size) + 0.3rem) !important;
+  }
   .experiences {
     gap: 2rem !important;
   }
@@ -499,6 +525,11 @@ footer em * {
   }
   .img-show {
     width: 92%;
+  }
+  footer {
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
   }
 }
 @media screen and (max-width: 374px) {
@@ -517,6 +548,12 @@ footer em * {
   .project {
     width: 290px !important;
     height: 180px !important;
+  }
+}
+@media screen and (max-width: 300px) {
+  .project {
+    width: 250px !important;
+    height: 150px !important;
   }
 }
 @media (pointer: none), (pointer: coarse) {

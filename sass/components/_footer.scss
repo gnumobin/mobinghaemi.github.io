@@ -1,7 +1,24 @@
 footer {
-    margin: 2rem 0 .5rem;
+    margin: 3rem 0 .5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     em {
         * {font-weight: normal !important}
+    }
+    i {
+        font-size: 1rem;
+    }
+    address {
+        color: var(--text-color);
+        display: flex;
+        align-items: center;
+        gap: .4rem;
+        * { color: var(--text-color) }
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+        text-decoration-color: skyblue;
     }
 }

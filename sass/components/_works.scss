@@ -69,6 +69,8 @@
             padding: 1rem;
             border-radius: var(--radius);
 
+            display: flex;
+            flex-direction: column;
             justify-content: end;
             align-items: start;
             gap: 1rem;
@@ -109,6 +111,8 @@
 
     .title-sec {
         font-size: var(--font-xl-size);
+        color: var(--text-bold-color);
+        font-weight: 600;
     }
 
     .content {
