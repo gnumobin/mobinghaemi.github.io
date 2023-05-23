@@ -109,3 +109,12 @@ function contextmenuHandler(e) {
     console.log(e);
     // e.preventDefault()
 }
+
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js").then(r => {
+        console.log("RR");
+        console.log(r);
+    }).catch(err => {
+        console.log(err);
+    })
+}

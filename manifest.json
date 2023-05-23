@@ -1,0 +1,20 @@
+{
+    "name": "mobin ghaemi",
+    "short_name": "my portfolio",
+    "start_url": ".",
+    "background_color": "#000",
+    "theme_color": "#000",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "images/me.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "images/me.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
