@@ -136,6 +136,11 @@ button, li, img {
   -moz-user-select: none;
 }
 
+::selection {
+  color: #333;
+  background-color: violet;
+}
+
 .center {
   display: flex;
   flex-direction: column;
@@ -236,7 +241,8 @@ header .title {
   gap: 2rem;
 }
 .profile .me .author-pic {
-  border: 2px inset hsla(207, 90%, 61%, 0.7);
+  border: 2px inset;
+  border-color: hsla(207, 90%, 61%, 0.7);
   border-radius: 50%;
   width: 150px;
   height: 150px;
@@ -245,7 +251,6 @@ header .title {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 8px 24px hsla(207, 90%, 61%, 0.25);
   cursor: pointer;
 }
 .profile .me .author-pic img {
@@ -270,10 +275,16 @@ header .title {
   gap: 1rem;
   justify-content: center;
 }
+.profile .me .social-media a {
+  transition: var(--transition) transform;
+}
 .profile .me .social-media i {
   border-bottom: 1px solid transparent;
 }
-.profile .me .social-media i:hover {
+.profile .me .social-media a:hover {
+  transform: scale(1.15);
+}
+.profile .me .social-media a:hover i {
   color: var(--first-color);
   border-bottom: 1px solid var(--first-color);
 }
@@ -298,29 +309,41 @@ header .title {
   gap: 1rem;
   align-items: center;
 }
-.profile .contact .resume button#downloadCV {
-  background: none;
-  padding: 0;
-  font-size: var(--font-l-size);
-  border-radius: 0;
+.profile .contact .resume {
+  display: flex;
 }
-.profile .contact .resume button#downloadCV a {
+.profile .contact .resume .download-cv {
   box-shadow: 0 8px 24px hsla(207, 90%, 61%, 0.25);
-  color: white;
+  padding: 1.3rem 2.15rem;
   border: 1px solid var(--first-color);
   border-radius: var(--radius);
   background-color: var(--first-color);
-  padding: 0.75rem 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
 }
-.profile .contact .resume button#downloadCV i {
-  font-size: var(--font-xl-size);
+.profile .contact .resume .download-cv *:not(i) {
   color: white;
+  font-size: var(--font-l-size);
 }
-.profile .contact .resume button:hover a {
-  background: transparent !important;
+.profile .contact .resume .download-cv i {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transition: 0.25s top;
+  transform: translate(-50%, -50%);
 }
-.profile .contact .resume button:hover a * {
-  color: var(--text-bold-color) !important;
+.profile .contact .resume .download-cv:hover {
+  background: transparent;
+}
+.profile .contact .resume .download-cv:hover i {
+  top: 50%;
+}
+.profile .contact .resume .download-cv:hover span {
+  color: transparent;
 }
 .profile .contact .message-me {
   display: flex;
@@ -339,6 +362,34 @@ header .title {
 }
 .profile .contact .message-me button:hover {
   background-color: transparent;
+}
+
+@keyframes author-pic-anim {
+  0% {
+    box-shadow: 0 8px 24px hsla(207, 90%, 61%, 0.25);
+  }
+  16.666666667% {
+    box-shadow: 8px 8px 24px hsla(207, 90%, 61%, 0.25);
+  }
+  33.333333334% {
+    box-shadow: 8px -8px 24px hsla(207, 90%, 61%, 0.25);
+  }
+  50.000000001% {
+    box-shadow: 0 -8px 24px hsla(207, 90%, 61%, 0.25);
+  }
+  66.666666668% {
+    box-shadow: -8px -8px 24px hsla(207, 90%, 61%, 0.25);
+  }
+  83.333333335% {
+    box-shadow: -8px 8px 24px hsla(207, 90%, 61%, 0.25);
+  }
+  100% {
+    box-shadow: 0 8px 24px hsla(207, 90%, 61%, 0.25);
+  }
+}
+/* The element to apply the animation to */
+.author-pic {
+  animation: author-pic-anim 10s infinite ease-in;
 }
 
 .works {
@@ -402,7 +453,6 @@ header .title {
   bottom: -100%;
   left: 0;
   padding: 1rem;
-  border-radius: var(--radius);
   display: flex;
   flex-direction: column;
   justify-content: end;

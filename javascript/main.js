@@ -26,6 +26,8 @@ authorPictureEl.addEventListener('click', showAuthorPicture)
 overlay.addEventListener('click', overlayHandler)
 // close image biggest element
 closeImgShowBtn.addEventListener('click', overlayHandler)
+// ContextMenu
+document.addEventListener('contextmenu' , contextmenuHandler)
 
 // Funcs
 
@@ -101,4 +103,9 @@ function showAuthorPicture() {
 function overlayHandler() {
     overlay.style.display = 'none'
     imgShowEl.style.transform = 'translate(-50%, -50%) scale(0)'
+}
+// Context Menu
+function contextmenuHandler(e) {
+    console.log(e);
+    // e.preventDefault()
 }

@@ -7,7 +7,9 @@
         gap: 2rem;
 
         .author-pic {
-            border: 2px inset hsla(207, 90%, 61%, .7);
+            border: 2px inset;
+            border-color: hsla(207, 90%, 61%, .7);
+
             border-radius: 50%;
             width: 150px;
             height: 150px;
@@ -18,7 +20,12 @@
             justify-content: center;
             align-items: center;
 
-            box-shadow: 0 8px 24px hsla(207, 90%, 61%, .25);
+            // box-shadow: 0 8px 24px hsla(207, 90%, 61%, .25);
+
+            // animation-name: authorPictureAnim;
+            // animation-duration: 3s;
+            // animation-iteration-count: 1;
+            // animation:  3s infinite;
 
             cursor: pointer;
 
@@ -51,14 +58,20 @@
         .social-media {
             @include row;
             justify-content: center;
+            a {
+                transition: var(--transition) transform;
+            }
 
             i {
                 border-bottom: 1px solid transparent;
             }
 
-            i:hover {
-                color: var(--first-color);
-                border-bottom: 1px solid var(--first-color);
+            a:hover {
+                transform: scale(1.15);
+                i {
+                    color: var(--first-color);
+                    border-bottom: 1px solid var(--first-color);
+                }
             }
 
         }
@@ -89,34 +102,44 @@
         align-items: center;
 
         .resume {
-            button#downloadCV {
-                background: none;
-                padding: 0;
-                font-size: var(--font-l-size);
-                border-radius: 0;
+            display: flex;
 
-                a {
-                    box-shadow: 0 8px 24px hsla(207, 90%, 61%, .25);
+            .download-cv {
+                box-shadow: 0 8px 24px hsla(207, 90%, 61%, .25);
+                padding: 1.3rem 2.15rem;
+                border: 1px solid var(--first-color);
+                border-radius: var(--radius);
+                background-color: var(--first-color);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: .5rem;
+                position: relative;
+                overflow: hidden;
 
+                *:not(i) {
                     color: white;
-                    border: 1px solid var(--first-color);
-                    border-radius: var(--radius);
-
-                    background-color: var(--first-color);
-                    padding: .75rem 1.1rem;
+                    font-size: var(--font-l-size);
                 }
 
                 i {
-                    font-size: var(--font-xl-size);
-                    color: white;
+                    position: absolute;
+                    top: -100%;
+                    left: 50%;
+                    transition: .25s top;
+                    transform: translate(-50%, -50%);
                 }
             }
 
-            button:hover a {
-                background: transparent !important;
+            .download-cv:hover {
+                background: transparent;
 
-                * {
-                    color: var(--text-bold-color) !important
+                i {
+                    top: 50%
+                }
+
+                span {
+                    color: transparent
                 }
             }
         }
@@ -143,4 +166,39 @@
             }
         }
     }
+}
+
+@keyframes author-pic-anim {
+    0% {
+        box-shadow: 0 8px 24px hsla(207, 90%, 61%, .25);
+    }
+
+    16.666666667% {
+        box-shadow: 8px 8px 24px hsla(207, 90%, 61%, .25);
+    }
+
+    33.333333334% {
+        box-shadow: 8px -8px 24px hsla(207, 90%, 61%, .25);
+    }
+
+    50.000000001% {
+        box-shadow: 0 -8px 24px hsla(207, 90%, 61%, .25);
+    }
+
+    66.666666668% {
+        box-shadow: -8px -8px 24px hsla(207, 90%, 61%, .25);
+    }
+
+    83.333333335% {
+        box-shadow: -8px 8px 24px hsla(207, 90%, 61%, .25);
+    }
+
+    100% {
+        box-shadow: 0 8px 24px hsla(207, 90%, 61%, .25);
+    }
+}
+
+/* The element to apply the animation to */
+.author-pic {
+    animation: author-pic-anim 10s infinite ease-in;
 }
