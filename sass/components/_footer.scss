@@ -10,6 +10,8 @@ footer {
     }
     i {
         font-size: 1rem;
+        transition: 1s;
+        display: inline-block;
     }
     address {
         color: var(--text-color);
@@ -17,8 +19,10 @@ footer {
         align-items: center;
         gap: .4rem;
         * { color: var(--text-color) }
-        text-decoration-line: underline;
-        text-decoration-style: wavy;
-        text-decoration-color: skyblue;
+    }
+    address a:hover {
+        i {
+            transform: rotateY(360deg) ;
+        }
     }
 }

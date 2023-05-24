@@ -251,6 +251,7 @@ header .title {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: author-pic-anim 10s infinite ease-in;
   cursor: pointer;
 }
 .profile .me .author-pic img {
@@ -261,6 +262,14 @@ header .title {
 }
 .profile .me .author-pic:hover img {
   transform: scale(1.1);
+}
+.profile .me .author-name {
+  position: relative;
+}
+.profile .me .author-name > .blue-tick {
+  position: absolute;
+  top: -5px;
+  color: var(--first-color);
 }
 .profile .me .author-name::after {
   content: "Web Developer";
@@ -387,11 +396,6 @@ header .title {
     box-shadow: 0 8px 24px hsla(207, 90%, 61%, 0.25);
   }
 }
-/* The element to apply the animation to */
-.author-pic {
-  animation: author-pic-anim 10s infinite ease-in;
-}
-
 .works {
   margin-top: 2rem;
 }
@@ -412,7 +416,7 @@ header .title {
 }
 .works #tabSwitcher li.active {
   padding: 1.75rem 0;
-  width: 50% !important;
+  width: 48% !important;
   background-color: var(--body-color);
   position: absolute;
   z-index: -1;
@@ -420,7 +424,7 @@ header .title {
   transition: var(--transition) left;
 }
 .works #tabSwitcher li.active.position {
-  left: 48.5% !important;
+  left: 51% !important;
 }
 
 .works .projects,
@@ -474,6 +478,10 @@ header .title {
   padding: 0.15rem 0.25rem;
   line-height: 10px;
 }
+.works .projects .project .more-desc {
+  cursor: pointer;
+  width: 100%;
+}
 .works .projects .project * {
   color: white;
 }
@@ -520,18 +528,20 @@ footer em * {
 }
 footer i {
   font-size: 1rem;
+  transition: 1s;
+  display: inline-block;
 }
 footer address {
   color: var(--text-color);
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  text-decoration-line: underline;
-  text-decoration-style: wavy;
-  text-decoration-color: skyblue;
 }
 footer address * {
   color: var(--text-color);
+}
+footer address a:hover i {
+  transform: rotateY(360deg);
 }
 
 @media screen and (max-width: 1023px) {

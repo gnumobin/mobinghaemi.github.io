@@ -14,6 +14,8 @@ const authorPictureEl = $('.author-pic');
 const imgShowEl = $('.img-show');
 // Close Image Biggest El Btn
 const closeImgShowBtn = $('#closeImgShow')
+// Years Of Work El
+const yearsOfWorkEl = $('.years-of-work')
 
 // Events
 // Switch Theme (Checkbox) Ev
@@ -35,6 +37,8 @@ document.addEventListener('contextmenu' , contextmenuHandler)
 window.onload = _ => {
     // set user theme on web
     callThemeFromLS()
+    // Update Years Of Work
+    yearsOfWorkEl.textContent = `+${new Date().getFullYear() - 2021}`
 }
 // Switch Theme Func
 function themeSwitchFunc(e) {
@@ -112,8 +116,8 @@ function contextmenuHandler(e) {
 
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("sw.js").then(r => {
-        console.log("RR");
-        console.log(r);
+        // console.log("RR");
+        // console.log(r);
     }).catch(err => {
         console.log(err);
     })

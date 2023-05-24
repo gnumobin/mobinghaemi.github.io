@@ -18,7 +18,7 @@
 
         li.active {
             padding: 1.75rem 0;
-            width: 50% !important;
+            width: 48% !important;
             background-color: var(--body-color);
             position: absolute;
             z-index: -1;
@@ -27,7 +27,7 @@
         }
 
         li.active.position {
-            left: 48.5% !important;
+            left: 51% !important;
         }
     }
 }
@@ -93,6 +93,11 @@
                 padding: .15rem .25rem;
                 line-height: 10px;
             }
+        }
+        .more-desc {
+            // background-color: red;
+            cursor: pointer;
+            width: 100%;
         }
 
         * {
