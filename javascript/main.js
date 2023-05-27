@@ -2,6 +2,11 @@ const $ = Q => document.querySelector(Q);
 // Variables
 const body = $('body');
 const overlay = $('.overlay');
+// Calculate Page Height 
+let html = document.documentElement;
+
+let height = Math.max(document.body.scrollHeight, document.body.offsetHeight,
+    html.clientHeight, html.scrollHeight, html.offsetHeight);
 
 const themeSwitchBtn = $('#themeSwitch input');
 // tabSwitcher El
@@ -16,6 +21,8 @@ const imgShowEl = $('.img-show');
 const closeImgShowBtn = $('#closeImgShow')
 // Years Of Work El
 const yearsOfWorkEl = $('.years-of-work')
+// Circles Box (Bg anime)
+const circlesBox = $('.circles');
 
 // Events
 // Switch Theme (Checkbox) Ev
@@ -29,7 +36,7 @@ overlay.addEventListener('click', overlayHandler)
 // close image biggest element
 closeImgShowBtn.addEventListener('click', overlayHandler)
 // ContextMenu
-document.addEventListener('contextmenu' , contextmenuHandler)
+document.addEventListener('contextmenu', contextmenuHandler)
 
 // Funcs
 
@@ -38,7 +45,10 @@ window.onload = _ => {
     // set user theme on web
     callThemeFromLS()
     // Update Years Of Work
-    yearsOfWorkEl.textContent = `+${new Date().getFullYear() - 2021}`
+    yearsOfWorkEl.textContent = `+${new Date().getFullYear() - 2021}`;
+    // Set Page Height for bg anime
+    console.log(height);
+    circlesBox.style.height = `${height}px`
 }
 // Switch Theme Func
 function themeSwitchFunc(e) {

@@ -1,8 +1,11 @@
+@import "../assets/icons/font/bootstrap-icons.css";
+
 @import "base/reset";
 @import "base/variables";
 @import "base/fonts";
 @import "base/default";
 
+@import "utils/animation";
 @import "utils/mixin";
 @import "utils/usefull_classes.scss";
 
