@@ -138,8 +138,8 @@ button, li, img {
 }
 
 ::selection {
-  color: #333;
-  background-color: violet;
+  color: white;
+  background-color: indigo;
 }
 
 .circles {
@@ -256,6 +256,29 @@ button, li, img {
     border-radius: 50%;
   }
 }
+@keyframes author-pic-anim {
+  0% {
+    box-shadow: 0 8px 24px hsla(207, 90%, 61%, 0.25);
+  }
+  16.666666667% {
+    box-shadow: 8px 8px 24px hsla(207, 90%, 61%, 0.25);
+  }
+  33.333333334% {
+    box-shadow: 8px -8px 24px hsla(207, 90%, 61%, 0.25);
+  }
+  50.000000001% {
+    box-shadow: 0 -8px 24px hsla(207, 90%, 61%, 0.25);
+  }
+  66.666666668% {
+    box-shadow: -8px -8px 24px hsla(207, 90%, 61%, 0.25);
+  }
+  83.333333335% {
+    box-shadow: -8px 8px 24px hsla(207, 90%, 61%, 0.25);
+  }
+  100% {
+    box-shadow: 0 8px 24px hsla(207, 90%, 61%, 0.25);
+  }
+}
 .center {
   display: flex;
   flex-direction: column;
@@ -298,6 +321,10 @@ button, li, img {
 .img-show img {
   width: 100%;
   border-radius: var(--radius);
+}
+.img-show i {
+  position: absolute;
+  top: 50%;
 }
 
 header {
@@ -368,12 +395,17 @@ header .title {
   align-items: center;
   animation: author-pic-anim 10s infinite ease-in;
   cursor: pointer;
+  position: relative;
 }
 .profile .me .author-pic img {
   width: 151px;
   height: 151px;
   border-radius: 50%;
   transition-property: transform;
+}
+.profile .me .author-pic i {
+  z-index: -1;
+  position: absolute;
 }
 .profile .me .author-pic:hover img {
   transform: scale(1.1);
@@ -533,13 +565,24 @@ header .title {
   width: 400px;
   height: 240px;
   position: relative;
-  background-color: #333;
+  border: 1px solid var(--container-color);
   border-radius: var(--radius);
   overflow: hidden;
 }
 .works .projects .project img.project-bg {
   width: 100%;
   height: 100%;
+}
+.works .projects .project img {
+  text-indent: -9999px;
+}
+.works .projects .project .emoji {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-bold-color);
+  z-index: -1;
 }
 .works .projects .project .content {
   width: calc(100% - 2rem);
@@ -569,6 +612,19 @@ header .title {
   border-radius: var(--radius);
   padding: 0.15rem 0.25rem;
   line-height: 10px;
+}
+.works .projects .project .content .creadit {
+  user-select: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(33, 38, 45, 0.4);
+  border: 1px solid rgba(33, 38, 45, 0.5);
+  border-radius: calc(var(--radius) - 4px);
+  padding: 0.2rem 0.6rem;
+}
+.works .projects .project .content .creadit i {
+  font-size: 0.9rem;
 }
 .works .projects .project .more-desc {
   cursor: pointer;

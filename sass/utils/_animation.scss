@@ -23,7 +23,6 @@
 
 }
 
-
 .circles li:nth-child(1) {
     left: 25%;
     width: 80px;
@@ -124,4 +123,34 @@
         border-radius: 50%;
     }
 
+}
+
+@keyframes author-pic-anim {
+    0% {
+        box-shadow: 0 8px 24px hsla(207, 90%, 61%, .25);
+    }
+
+    16.666666667% {
+        box-shadow: 8px 8px 24px hsla(207, 90%, 61%, .25);
+    }
+
+    33.333333334% {
+        box-shadow: 8px -8px 24px hsla(207, 90%, 61%, .25);
+    }
+
+    50.000000001% {
+        box-shadow: 0 -8px 24px hsla(207, 90%, 61%, .25);
+    }
+
+    66.666666668% {
+        box-shadow: -8px -8px 24px hsla(207, 90%, 61%, .25);
+    }
+
+    83.333333335% {
+        box-shadow: -8px 8px 24px hsla(207, 90%, 61%, .25);
+    }
+
+    100% {
+        box-shadow: 0 8px 24px hsla(207, 90%, 61%, .25);
+    }
 }

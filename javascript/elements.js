@@ -13,20 +13,33 @@ const loadNeededElements = (projectsEl, skillsEl) => {
     loadSkillsEl(skillsEl)
 }
 
+const starsRepos = [4, 5, 2];
 const loadProjectsEl = projectsEl => {
     projectsData.forEach(project => {
         // Create Project Codes
         const html = `
             <div class="project">
-            <img class="project-bg" src="../assets/img/${project.picture}" alt="current project background" loading="lazy">
+            <img class="project-bg" src="../assets/img/${project?.picture}" alt="${project?.alt}" loading="lazy">
+            <i class="bi bi-emoji-smile-upside-down-fill emoji"></i>
                 <div class="content">
-                    <span>${project.tag}</span>
-                    <h1 class="title">${project.name}</h1>
-                    <a class="open-this-project" href=${project.link}><i class="bi bi-link-45deg"></i></a>
+                    <div class="creadit">
+                        <span class='stars'>1</span>
+                        <i class="bi bi-star"></i>
+                    </div>
+                    <span>${project?.tag}</span>
+                    <h1 class="title">${project?.name}</h1>
+                    <a class="open-this-project" href=${project?.link}><i class="bi bi-link-45deg"></i></a>
                 </div>
             </div> `
         // Add Project to html
         projectsEl.insertAdjacentHTML("beforeend", html)
+        // Update Stars
+        fetch('https://api.github.com/users/mobinghaemi/repos').then(r => r.json()).then(r => {
+            const element = document.querySelectorAll('.stars');
+            [...element].forEach((el, n) => {
+                el.textContent = r[starsRepos[n]]?.watchers || 0
+            })
+        })
     });
 }
 const loadSkillsEl = skillsEl => {
@@ -58,14 +71,17 @@ import { G_PROFILE } from "./data.js";
 const authorPictureEl = $('.author-pic img');
 const imgShowEl = $('.img-show img');
 const authorNameEl = $('.author-name strong');
-const addressEl = $('address a')
+const addressEl = $('address a span')
 const emAuthorNameEl = $('em .author-name')
 const githubFollowersEl = $('#githubFollowers')
 
 // Functions
 const updateUI_G = () => {
     G_PROFILE().then(response => {
-        console.log(response);
+        // console.log(response);
+        fetch(response.repos_url).then(r => r.json()).then((r) => {
+            // console.log(r);
+        })
         // Update Profile Image
         authorPictureEl.src = response.avatar_url
         imgShowEl.src = response.avatar_url
