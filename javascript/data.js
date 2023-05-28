@@ -4,19 +4,19 @@ export const projectsData = [
         tag: 'web',
         name: 'Vazheyab golden',
         link: 'https://github.com/mobinghaemi/vazheyab-golden',
-        picture : 'project-1.png'
+        picture: 'project-1.png'
     },
     {
         tag: 'web',
         name: 'Vecia',
         link: 'https://github.com/mobinghaemi/Vecia',
-        picture : 'project-2.png'
+        picture: 'project-2.png'
     },
     {
         tag: 'web',
         name: 'Portfolio',
         link: 'https://github.com/mobinghaemi/mobinghaemi.github.io',
-        picture : 'project-3.png'
+        picture: 'project-3.png'
     }
 ]
 // Skills (HTML , Css , ...) Data
@@ -37,3 +37,9 @@ export const skillsData = [
         { title: 'React Native', label: 'basic', icon: 'bi bi-phone' }
     ]
 ]
+
+
+export const G_PROFILE = async _ => {
+    const USER = `https://api.github.com/users/mobinghaemi`;
+    return await fetch(USER).then(r => r.json()).then(r => r)
+}

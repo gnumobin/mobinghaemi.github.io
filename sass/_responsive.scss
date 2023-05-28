@@ -63,11 +63,16 @@
         width: 300px !important;
         height: 180px !important;
     }
-    #downloadCV span span {
-        display: none;
-    }
     .experiences {
         gap: 1.25rem !important;
+    }
+    .download-cv {
+        .download-text {
+            display: none;
+        }
+    }
+    i#two {
+        display: block;
     }
 }
 

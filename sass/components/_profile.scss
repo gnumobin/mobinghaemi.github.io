@@ -63,18 +63,7 @@
             a {
                 transition: var(--transition);
             }
-            a:nth-child(1) {
-                animation: reverse-ic 8s infinite 1s;
-            }
-            a:nth-child(2) {
-                animation: reverse-ic 8s infinite 2s;
-            }
-            a:nth-child(3) {
-                animation: reverse-ic 8s infinite 3s;
-            }
-            a:nth-child(4) {
-                animation: reverse-ic 8s infinite 4s;
-            }
+
 
             i {
                 border-bottom: 1px solid transparent;
@@ -137,7 +126,7 @@
                     font-size: var(--font-l-size);
                 }
 
-                i {
+                i#one {
                     position: absolute;
                     top: -100%;
                     left: 50%;
@@ -149,11 +138,11 @@
             .download-cv:hover {
                 background: transparent;
 
-                i {
+                i#one {
                     top: 50%
                 }
 
-                span {
+                span , #two {
                     color: transparent
                 }
             }
@@ -183,49 +172,3 @@
     }
 }
 
-@keyframes author-pic-anim {
-    0% {
-        box-shadow: 0 8px 24px hsla(207, 90%, 61%, .25);
-    }
-
-    16.666666667% {
-        box-shadow: 8px 8px 24px hsla(207, 90%, 61%, .25);
-    }
-
-    33.333333334% {
-        box-shadow: 8px -8px 24px hsla(207, 90%, 61%, .25);
-    }
-
-    50.000000001% {
-        box-shadow: 0 -8px 24px hsla(207, 90%, 61%, .25);
-    }
-
-    66.666666668% {
-        box-shadow: -8px -8px 24px hsla(207, 90%, 61%, .25);
-    }
-
-    83.333333335% {
-        box-shadow: -8px 8px 24px hsla(207, 90%, 61%, .25);
-    }
-
-    100% {
-        box-shadow: 0 8px 24px hsla(207, 90%, 61%, .25);
-    }
-}
-
-
-@keyframes reverse-ic {
-    0% { transform: rotate(0) }
-
-    16.666666667% { transform: rotate(0) }
-
-    33.333333334% { transform: rotate(0) }
-
-    50.000000001% { transform: rotate(0) }
-
-    66.666666668% { transform: rotate(0) }
-
-    83.333333335% { transform: rotate(360deg) }
-
-    100% { transform: rotate(360deg) }
-}

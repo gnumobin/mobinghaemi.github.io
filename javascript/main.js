@@ -1,13 +1,11 @@
-const $ = Q => document.querySelector(Q);
+import { $ } from "./utils.js";
 // Variables
 const body = $('body');
 const overlay = $('.overlay');
 // Calculate Page Height 
 let html = document.documentElement;
-
-let height = Math.max(document.body.scrollHeight, document.body.offsetHeight,
-    html.clientHeight, html.scrollHeight, html.offsetHeight);
-
+// Get Container
+let container = $('.container');
 const themeSwitchBtn = $('#themeSwitch input');
 // tabSwitcher El
 const tabSwitcherEl = [...$('#tabSwitcher').children];
@@ -35,8 +33,6 @@ authorPictureEl.addEventListener('click', showAuthorPicture)
 overlay.addEventListener('click', overlayHandler)
 // close image biggest element
 closeImgShowBtn.addEventListener('click', overlayHandler)
-// ContextMenu
-document.addEventListener('contextmenu', contextmenuHandler)
 
 // Funcs
 
@@ -47,8 +43,7 @@ window.onload = _ => {
     // Update Years Of Work
     yearsOfWorkEl.textContent = `+${new Date().getFullYear() - 2021}`;
     // Set Page Height for bg anime
-    console.log(height);
-    circlesBox.style.height = `${height}px`
+    circlesBox.style.height = `${container.clientHeight + 10}px`
 }
 // Switch Theme Func
 function themeSwitchFunc(e) {
@@ -105,6 +100,7 @@ function tabsHandlerFunc(index, e) {
     tabsEl.forEach((_, i) => tabsEl[i].classList.add('hidden'))
     // Show index Section
     tabsEl[index].classList.remove('hidden')
+    circlesBox.style.height = `${container.clientHeight + 10}px`
     // Set active on active li , set active el position
     index ? activeEl.classList.add('position') : activeEl.classList.remove('position')
 }
@@ -118,17 +114,6 @@ function overlayHandler() {
     overlay.style.display = 'none'
     imgShowEl.style.transform = 'translate(-50%, -50%) scale(0)'
 }
-// Context Menu
-function contextmenuHandler(e) {
-    console.log(e);
-    // e.preventDefault()
-}
-
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js").then(r => {
-        // console.log("RR");
-        // console.log(r);
-    }).catch(err => {
-        console.log(err);
-    })
-}
+// PWA
+if ("serviceWorker" in navigator)
+    navigator.serviceWorker.register("sw.js").then(r => { }).catch(err => console.log(err))

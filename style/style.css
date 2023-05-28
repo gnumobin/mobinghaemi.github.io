@@ -63,6 +63,7 @@ table {
   --font-xs-size: .75rem;
   --first-color: #42a5f5;
   --container-color: #e9ebec;
+  --anim-bg-color: rgba(0, 0, 0, 0.2);
 }
 
 @font-face {
@@ -83,7 +84,6 @@ body {
 
 * {
   font-family: inherit;
-  font-display: swap;
   font-size: var(--font-m-size);
   transition: var(--transition);
   transition-property: color, background, border-color;
@@ -144,10 +144,10 @@ button, li, img {
 
 .circles {
   position: absolute;
+  z-index: -1;
   top: 0;
   left: 0;
   width: 100%;
-  height: 188%;
   overflow: hidden;
 }
 
@@ -157,9 +157,8 @@ button, li, img {
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--anim-bg-color);
   animation: animate 35s linear infinite;
-  animation-delay: 5s !important;
   bottom: -150px;
 }
 
@@ -170,11 +169,18 @@ button, li, img {
   animation-delay: 0s;
 }
 
+.circles li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 2s;
+}
+
 .circles li:nth-child(2) {
   left: 10%;
   width: 20px;
   height: 20px;
-  animation-delay: 2s;
+  animation-delay: 4s;
   animation-duration: 12s;
 }
 
@@ -182,14 +188,14 @@ button, li, img {
   left: 70%;
   width: 20px;
   height: 20px;
-  animation-delay: 4s;
+  animation-delay: 6s;
 }
 
 .circles li:nth-child(4) {
   left: 40%;
   width: 60px;
   height: 60px;
-  animation-delay: 0s;
+  animation-delay: 2s;
   animation-duration: 18s;
 }
 
@@ -197,28 +203,28 @@ button, li, img {
   left: 65%;
   width: 20px;
   height: 20px;
-  animation-delay: 0s;
+  animation-delay: 2s;
 }
 
 .circles li:nth-child(6) {
   left: 75%;
   width: 110px;
   height: 110px;
-  animation-delay: 3s;
+  animation-delay: 5s;
 }
 
 .circles li:nth-child(7) {
   left: 35%;
   width: 150px;
   height: 150px;
-  animation-delay: 7s;
+  animation-delay: 9s;
 }
 
 .circles li:nth-child(8) {
   left: 50%;
   width: 25px;
   height: 25px;
-  animation-delay: 15s;
+  animation-delay: 17s;
   animation-duration: 45s;
 }
 
@@ -226,7 +232,7 @@ button, li, img {
   left: 20%;
   width: 15px;
   height: 15px;
-  animation-delay: 2s;
+  animation-delay: 4s;
   animation-duration: 35s;
 }
 
@@ -234,7 +240,7 @@ button, li, img {
   left: 85%;
   width: 150px;
   height: 150px;
-  animation-delay: 0s;
+  animation-delay: 2s;
   animation-duration: 11s;
 }
 
@@ -396,18 +402,6 @@ header .title {
 .profile .me .social-media a {
   transition: var(--transition);
 }
-.profile .me .social-media a:nth-child(1) {
-  animation: reverse-ic 8s infinite 1s;
-}
-.profile .me .social-media a:nth-child(2) {
-  animation: reverse-ic 8s infinite 2s;
-}
-.profile .me .social-media a:nth-child(3) {
-  animation: reverse-ic 8s infinite 3s;
-}
-.profile .me .social-media a:nth-child(4) {
-  animation: reverse-ic 8s infinite 4s;
-}
 .profile .me .social-media i {
   border-bottom: 1px solid transparent;
 }
@@ -459,7 +453,7 @@ header .title {
   color: white;
   font-size: var(--font-l-size);
 }
-.profile .contact .resume .download-cv i {
+.profile .contact .resume .download-cv i#one {
   position: absolute;
   top: -100%;
   left: 50%;
@@ -469,10 +463,10 @@ header .title {
 .profile .contact .resume .download-cv:hover {
   background: transparent;
 }
-.profile .contact .resume .download-cv:hover i {
+.profile .contact .resume .download-cv:hover i#one {
   top: 50%;
 }
-.profile .contact .resume .download-cv:hover span {
+.profile .contact .resume .download-cv:hover span, .profile .contact .resume .download-cv:hover #two {
   color: transparent;
 }
 .profile .contact .message-me {
@@ -494,52 +488,6 @@ header .title {
   background-color: transparent;
 }
 
-@keyframes author-pic-anim {
-  0% {
-    box-shadow: 0 8px 24px hsla(207, 90%, 61%, 0.25);
-  }
-  16.666666667% {
-    box-shadow: 8px 8px 24px hsla(207, 90%, 61%, 0.25);
-  }
-  33.333333334% {
-    box-shadow: 8px -8px 24px hsla(207, 90%, 61%, 0.25);
-  }
-  50.000000001% {
-    box-shadow: 0 -8px 24px hsla(207, 90%, 61%, 0.25);
-  }
-  66.666666668% {
-    box-shadow: -8px -8px 24px hsla(207, 90%, 61%, 0.25);
-  }
-  83.333333335% {
-    box-shadow: -8px 8px 24px hsla(207, 90%, 61%, 0.25);
-  }
-  100% {
-    box-shadow: 0 8px 24px hsla(207, 90%, 61%, 0.25);
-  }
-}
-@keyframes reverse-ic {
-  0% {
-    transform: rotate(0);
-  }
-  16.666666667% {
-    transform: rotate(0);
-  }
-  33.333333334% {
-    transform: rotate(0);
-  }
-  50.000000001% {
-    transform: rotate(0);
-  }
-  66.666666668% {
-    transform: rotate(0);
-  }
-  83.333333335% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 .works {
   margin-top: 2rem;
 }
@@ -741,11 +689,14 @@ footer address a:hover i {
     width: 300px !important;
     height: 180px !important;
   }
-  #downloadCV span span {
-    display: none;
-  }
   .experiences {
     gap: 1.25rem !important;
+  }
+  .download-cv .download-text {
+    display: none;
+  }
+  i#two {
+    display: block;
   }
 }
 @media screen and (max-width: 324px) {
@@ -770,6 +721,7 @@ footer address a:hover i {
   --text-color: #b8c0c7;
   --container-color: #171f26;
   --body-color: hsl(207, 40%, 8%);
+  --anim-bg-color: rgba(255, 255, 255, 0.2);
 }
 
 /*# sourceMappingURL=style.css.map */

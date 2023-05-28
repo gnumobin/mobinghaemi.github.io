@@ -1,13 +1,13 @@
+import { $ } from "./utils.js";
 // Datas
 import { projectsData } from "./data.js";
 import { skillsData } from "./data.js";
 
 // Variables
-const projectsEl = document.querySelector('.projects');
-const skillsEl = [...document.querySelector(".skills").children];
+const projectsEl = $('.projects');
+const skillsEl = [...$(".skills").children];
 
 // Functions
-
 const loadNeededElements = (projectsEl, skillsEl) => {
     loadProjectsEl(projectsEl)
     loadSkillsEl(skillsEl)
@@ -51,3 +51,32 @@ const loadSkillsEl = skillsEl => {
 }
 // Call
 loadNeededElements(projectsEl, skillsEl)
+
+// Update DOM
+import { G_PROFILE } from "./data.js";
+// Variables
+const authorPictureEl = $('.author-pic img');
+const imgShowEl = $('.img-show img');
+const authorNameEl = $('.author-name strong');
+const addressEl = $('address a')
+const emAuthorNameEl = $('em .author-name')
+const githubFollowersEl = $('#githubFollowers')
+
+// Functions
+const updateUI_G = () => {
+    G_PROFILE().then(response => {
+        console.log(response);
+        // Update Profile Image
+        authorPictureEl.src = response.avatar_url
+        imgShowEl.src = response.avatar_url
+        // Update Name and subname
+        authorNameEl.textContent = response.name
+        emAuthorNameEl.textContent = response.name
+        // Update Location
+        addressEl.textContent = response.location
+        // Update Followers
+        githubFollowersEl.textContent = response.followers
+    })
+}
+
+updateUI_G()

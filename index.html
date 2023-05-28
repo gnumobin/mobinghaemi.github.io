@@ -44,7 +44,6 @@
 
     <link rel="shortcut icon" href="assets/img/me.jpg" type="image/x-icon">
     <link rel="stylesheet" href="style/style.css">
-    <!-- <link rel="stylesheet" href="assets/icons/font/bootstrap-icons.css"> -->
 
     <meta name="theme-color" content="#0c151d">
     <link rel="manifest" href="manifest.json">
@@ -53,7 +52,7 @@
 
 </head>
 
-<body>
+<body ondragstart="return false" ondrop="return false">
     <div class="overlay"></div>
 
     <div class="img-show">
@@ -110,18 +109,18 @@
                         <p>Years of<br>Work</p>
                     </div>
                     <div>
-                        <b>3</b>
-                        <p>Completed<br>Projects</p>
+                        <b id="githubFollowers">1</b>
+                        <p>Gtihub<br>Followers</p>
                     </div>
                     <div>
-                        <b>1</b>
-                        <p>Uncompleted<br>Projects</p>
+                        <b>3</b>
+                        <p>Completed<br>Projects</p>
                     </div>
                 </div>
                 <div class="contact">
                     <div class="resume">
-                        <a href="./assets/files/mobinghaemi.pdf" download class="download-cv">
-                            <span>Download CV</span>
+                        <a title="Download Resume" href="./assets/files/mobinghaemi.pdf" download class="download-cv">
+                            <span class="download-text">Download</span><span>CV</span>
                             <i class="bi bi-download" id="one"></i>
                         </a>
                     </div>
@@ -165,7 +164,7 @@
         </section>
         <footer>
             <div>
-                <em>- Bʏ <strong>Mobin Ghaemi</strong></em>
+                <em>- Bʏ <strong class="author-name">Mobin Ghaemi</strong></em>
             </div>
             <div>
                 <address>
@@ -179,6 +178,7 @@
     </main>
 
     <script src="javascript/scrollreveal.min.js" defer></script>
+    <script src="javascript/utils.js" type="module"></script>
     <script src="javascript/data.js" type="module" defer></script>
     <script src="javascript/main.js" type="module" defer></script>
     <script src="javascript/elements.js" type="module" defer></script>
