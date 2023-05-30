@@ -23,7 +23,7 @@ const loadProjectsEl = projectsEl => {
             <i class="bi bi-emoji-smile-upside-down-fill emoji"></i>
                 <div class="content">
                     <div class="creadit">
-                        <span class='stars'>1</span>
+                        <span class='stars'>?</span>
                         <i class="bi bi-star"></i>
                     </div>
                     <span>${project?.tag}</span>
@@ -36,9 +36,11 @@ const loadProjectsEl = projectsEl => {
         // Update Stars
         fetch('https://api.github.com/users/mobinghaemi/repos').then(r => r.json()).then(r => {
             const element = document.querySelectorAll('.stars');
-            [...element].forEach((el, n) => {
-                el.textContent = r[starsRepos[n]]?.watchers || 0
-            })
+            if (!r?.message.includes('API rate limit')) {
+                [...element].forEach((el, n) => {
+                    el.textContent = r[starsRepos[n]]?.watchers || 0
+                })
+            }
         })
     });
 }
@@ -78,20 +80,20 @@ const githubFollowersEl = $('#githubFollowers')
 // Functions
 const updateUI_G = () => {
     G_PROFILE().then(response => {
-        // console.log(response);
-        fetch(response.repos_url).then(r => r.json()).then((r) => {
-            // console.log(r);
-        })
-        // Update Profile Image
-        authorPictureEl.src = response.avatar_url
-        imgShowEl.src = response.avatar_url
-        // Update Name and subname
-        authorNameEl.textContent = response.name
-        emAuthorNameEl.textContent = response.name
-        // Update Location
-        addressEl.textContent = response.location
-        // Update Followers
-        githubFollowersEl.textContent = response.followers
+        if (!response?.message.includes('API rate limit')) {
+            // Update Profile Image
+            authorPictureEl.src = response?.avatar_url
+            imgShowEl.src = response?.avatar_url
+            // Update Name and subname
+            authorNameEl.textContent = response?.name
+            emAuthorNameEl.textContent = response?.name
+            // Update Location
+            addressEl.textContent = response?.location
+            // Update Followers
+            githubFollowersEl.textContent = response?.followers
+        } else {
+            authorPictureEl.src = '../assets/img/me.jpg'
+        }
     })
 }
 
