@@ -36,7 +36,7 @@ const loadProjectsEl = projectsEl => {
         // Update Stars
         fetch('https://api.github.com/users/mobinghaemi/repos').then(r => r.json()).then(r => {
             const element = document.querySelectorAll('.stars');
-            if (!r?.message.includes('API rate limit')) {
+            if (!r.message) {
                 [...element].forEach((el, n) => {
                     el.textContent = r[starsRepos[n]]?.watchers || 0
                 })
@@ -80,7 +80,7 @@ const githubFollowersEl = $('#githubFollowers')
 // Functions
 const updateUI_G = () => {
     G_PROFILE().then(response => {
-        if (!response?.message.includes('API rate limit')) {
+        if (!response.message) {
             // Update Profile Image
             authorPictureEl.src = response?.avatar_url
             imgShowEl.src = response?.avatar_url
