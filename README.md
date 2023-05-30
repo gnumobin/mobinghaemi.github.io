@@ -2,7 +2,7 @@
 
 ## Demo
 
-https://mobinghaemi.github.io
+[Show](https://mobinghaemi.github.io)
 
 ## Authors 
 
@@ -10,7 +10,11 @@ https://mobinghaemi.github.io
 
 ## Licence
 
-[MIT Licence](LICENCE)
+[GPL Licence](LICENCE)
+
+## Privacy Policy
+
+[Security](SECURITY)
 
 ## Sponsor
 
