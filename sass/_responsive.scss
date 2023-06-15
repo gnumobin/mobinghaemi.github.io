@@ -55,6 +55,11 @@
         align-items: start;
         gap: 1rem;
     }
+    #coffee {
+        span {
+            font-size: var(--font-s-size);
+        }
+    }
 }
 
 // Mobile (Medium) Size : 375px - 1px
@@ -90,6 +95,11 @@
     .project {
         width: 250px !important;
         height: 150px !important;
+    }
+    #coffee {
+        span {
+            display: none;
+        }
     }
 }
 

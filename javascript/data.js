@@ -26,7 +26,8 @@ export const projectsData = [
         picture: 'project-1.jpeg',
         alt: 'VazheYab Golden',
         ID: 510254619,
-        getWatchers
+        getWatchers,
+        date : '2021'
     },
     {
         tag: 'web',
@@ -35,7 +36,8 @@ export const projectsData = [
         picture: 'project-2.jpeg',
         alt: 'Vecia',
         ID: 575857792,
-        getWatchers
+        getWatchers,
+        date : '2022'
     },
     {
         tag: 'web',
@@ -44,7 +46,8 @@ export const projectsData = [
         picture: 'project-3.jpeg',
         alt: 'This Website',
         ID: 636470619,
-        getWatchers
+        getWatchers,
+        date : '2023'
     }
 ]
 // Skills (HTML , Css , ...) Data

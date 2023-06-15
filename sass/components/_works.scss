@@ -123,6 +123,27 @@
                     font-size: .9rem;
                 }
             }
+
+            .date-parent {
+                user-select: none;
+
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+
+                // background-color: rgba(33, 38, 45, .4);
+                border-bottom: 1px solid var(--first-color);
+                padding: .2rem .4rem;
+
+                display: flex;
+                gap: .4rem;
+                align-items: center;
+                justify-content: center;
+
+                i {
+                    font-size: .9rem;
+                }
+            }
         }
 
         .more-desc {

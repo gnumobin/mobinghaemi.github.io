@@ -27,6 +27,10 @@ const loadProjectsEl = projectsEl => {
                     <span>${project?.tag}</span>
                     <h1 class="title">${project?.name}</h1>
                     <a class="open-this-project" href=${project?.link}><i class="bi bi-link-45deg"></i></a>
+                    <div class="date-parent">
+                        <span class='date'>${project.date}</span>
+                        <i class="bi bi-calendar"></i>
+                    </div>
                 </div>
             </div> `
         // Add Project to html

@@ -32,6 +32,7 @@
                 border-radius: 50%;
                 transition-property: transform;
             }
+
             i {
                 z-index: -1;
                 position: absolute;
@@ -46,9 +47,10 @@
             position: relative;
         }
 
-        .author-name>.blue-tick {
+        .author-name > .blue-tick {
+            width: 30px;
             position: absolute;
-            top: -5px;
+            top: -8px;
             color: var(--first-color);
         }
 
@@ -78,7 +80,6 @@
                 transform: scale(1.15) !important;
 
                 i {
-                    color: var(--first-color);
                     border-bottom: 1px solid var(--first-color);
                 }
             }
@@ -147,7 +148,8 @@
                     top: 50%
                 }
 
-                span , #two {
+                span,
+                #two {
                     color: transparent
                 }
             }
@@ -176,4 +178,3 @@
         }
     }
 }
-

@@ -64,3 +64,9 @@ button , li , img {
     color: white;
     background-color: indigo;
 }
+a:hover {
+    color: aqua !important;
+    * {
+        color: aqua ;
+    }
+}
