@@ -1,9 +1,28 @@
 header {
     direction: rtl;
+    margin-bottom: 1rem;
     // magic
     nav ul {
         @include row;
         align-items: center;
+        justify-content: space-between;
+        a {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            color: var(--text-bold-color);
+        }
+        a:hover {
+            * {
+                color: aqua;
+            }
+        }
+        li {
+            cursor: pointer;
+        }
+        li#coffee i{
+            font-size: 2rem;
+        }
     }
     .toggle { 
         --size: 2rem;

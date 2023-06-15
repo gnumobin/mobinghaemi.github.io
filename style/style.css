@@ -329,11 +329,28 @@ button, li, img {
 
 header {
   direction: rtl;
+  margin-bottom: 1rem;
 }
 header nav ul {
   display: flex;
   gap: 1rem;
   align-items: center;
+  justify-content: space-between;
+}
+header nav ul a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-bold-color);
+}
+header nav ul a:hover * {
+  color: aqua;
+}
+header nav ul li {
+  cursor: pointer;
+}
+header nav ul li#coffee i {
+  font-size: 2rem;
 }
 header .toggle {
   --size: 2rem;
@@ -589,7 +606,7 @@ header .title {
   height: calc(100% - 2rem);
   background: rgba(0, 0, 0, 0.671);
   position: absolute;
-  bottom: -100%;
+  bottom: -105%;
   left: 0;
   padding: 1rem;
   display: flex;
