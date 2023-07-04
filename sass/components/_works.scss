@@ -42,12 +42,45 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 
+    .border-anime {
+
+        border-radius: var(--radius);
+
+        --border-size: 3px;
+        --border-angle: 0turn;
+        // width: 60vmin;
+        // height: 50vmin;
+        background-image: conic-gradient(from var(--border-angle),
+                #213,
+                #112 50%,
+                #213),
+            conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+        background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)),
+            cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        animation: bg-spin 3s linear infinite;
+
+
+        &:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes bg-spin {
+            to {
+                --border-angle: 1turn;
+            }
+        }
+
+    }
+
     .project {
         width: 400px;
         height: 240px;
         position: relative;
+        padding: .15rem;
 
-        border: 1px solid var(--container-color);
         border-radius: var(--radius);
 
         overflow: hidden;
@@ -59,6 +92,7 @@
 
         img {
             text-indent: -9999px;
+            border-radius: 5px;
         }
 
         .emoji {
@@ -102,9 +136,13 @@
             a.open-this-project {
                 background-color: var(--first-color);
                 border: 1px solid var(--first-color);
-                border-radius: var(--radius);
-                padding: .15rem .25rem;
+                border-radius: 50%;
+                padding: .15rem .22rem;
                 line-height: 10px;
+            }
+
+            a.open-this-project:hover {
+                background: transparent;
             }
 
             .creadit {

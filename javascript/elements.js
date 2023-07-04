@@ -16,20 +16,22 @@ const loadNeededElements = (projectsEl, skillsEl) => {
 const loadProjectsEl = projectsEl => {
     projectsData.forEach((project, number) => {
         const html = `
-            <div class="project">
-            <img class="project-bg" src="../assets/img/${project?.picture}" alt="${project?.alt}" loading="lazy">
-            <i class="bi bi-emoji-smile-upside-down-fill emoji"></i>
-                <div class="content">
-                    <div class="creadit">
-                        <span class='stars star-${number}'>?</span>
-                        <i class="bi bi-star"></i>
-                    </div>
-                    <span>${project?.tag}</span>
-                    <h1 class="title">${project?.name}</h1>
-                    <a class="open-this-project" href=${project?.link}><i class="bi bi-link-45deg"></i></a>
-                    <div class="date-parent">
-                        <span class='date'>${project.date}</span>
-                        <i class="bi bi-calendar"></i>
+            <div class='border-anime'>
+                <div class="project">
+                <img class="project-bg" src="../assets/img/${project?.picture}" alt="${project?.alt}" loading="lazy">
+                <i class="bi bi-emoji-smile-upside-down-fill emoji"></i>
+                    <div class="content">
+                        <div class="creadit">
+                            <span class='stars star-${number}'>?</span>
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <span>${project?.tag}</span>
+                        <h1 class="title">${project?.name}</h1>
+                        <a class="open-this-project" href=${project?.link} title="open this project at github"><i class="bi bi-link-45deg"></i></a>
+                        <div class="date-parent">
+                            <span class='date'>${project.date}</span>
+                            <i class="bi bi-calendar"></i>
+                        </div>
                     </div>
                 </div>
             </div> `
