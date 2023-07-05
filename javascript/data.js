@@ -27,7 +27,8 @@ export const projectsData = [
         alt: 'VazheYab Golden',
         ID: 510254619,
         getWatchers,
-        date : '2021'
+        date : '2021',
+        live : false
     },
     {
         tag: 'web',
@@ -37,7 +38,8 @@ export const projectsData = [
         alt: 'Vecia',
         ID: 575857792,
         getWatchers,
-        date : '2022'
+        date : '2022',
+        live : 'https://mobinghaemi.github.io/Vecia'
     },
     {
         tag: 'web',
@@ -47,7 +49,8 @@ export const projectsData = [
         alt: 'This Website',
         ID: 636470619,
         getWatchers,
-        date : '2023'
+        date : '2023',
+        live : 'https://mobinghaemi.github.io/'
     }
 ]
 // Skills (HTML , Css , ...) Data

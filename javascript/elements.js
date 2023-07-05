@@ -17,17 +17,24 @@ const loadProjectsEl = projectsEl => {
     projectsData.forEach((project, number) => {
         const html = `
             <div class='border-anime'>
-                <div class="project">
+                <div class="project" tabindex="-1">
                 <img class="project-bg" src="../assets/img/${project?.picture}" alt="${project?.alt}" loading="lazy">
                 <i class="bi bi-emoji-smile-upside-down-fill emoji"></i>
-                    <div class="content">
+                    <div class="content" tabindex="-1">
                         <div class="creadit">
                             <span class='stars star-${number}'>?</span>
                             <i class="bi bi-star"></i>
                         </div>
                         <span>${project?.tag}</span>
                         <h1 class="title">${project?.name}</h1>
-                        <a class="open-this-project" href=${project?.link} title="open this project at github"><i class="bi bi-link-45deg"></i></a>
+                        <div class="buttons">
+                        <a class="open-this-project" href=${project?.link} title="open this project at github">
+                        <i class="bi bi-link-45deg"></i>
+                        </a>
+                        ${project?.live && `<a class="run-this-project" href=${project?.live} title="run this project">
+                            <i class="bi bi-play"></i>
+                        </a>`}
+                        </div>
                         <div class="date-parent">
                             <span class='date'>${project.date}</span>
                             <i class="bi bi-calendar"></i>

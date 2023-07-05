@@ -63,6 +63,7 @@ table {
   --font-xs-size: .75rem;
   --first-color: #42a5f5;
   --container-color: #e9ebec;
+  --project-color: rgba(233, 235, 236, .7);
   --anim-bg-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -147,6 +148,10 @@ a:hover {
 }
 a:hover * {
   color: aqua;
+}
+
+i {
+  pointer-events: none;
 }
 
 .circles {
@@ -631,7 +636,7 @@ header .title {
 .works .projects .project .content {
   width: calc(100% - 2rem);
   height: calc(100% - 2rem);
-  background: rgba(0, 0, 0, 0.671);
+  background: var(--project-color);
   position: absolute;
   bottom: -105%;
   left: 0;
@@ -648,16 +653,29 @@ header .title {
 }
 .works .projects .project .content .title {
   font-size: calc(var(--font-xl-size) + 0.75rem);
+  color: var(--text-bold-color);
   margin-top: -0.5rem;
 }
-.works .projects .project .content a.open-this-project {
-  background-color: var(--first-color);
-  border: 1px solid var(--first-color);
+.works .projects .project .content a {
   border-radius: 50%;
   padding: 0.15rem 0.22rem;
-  line-height: 10px;
 }
-.works .projects .project .content a.open-this-project:hover {
+.works .projects .project .content a * {
+  color: #213;
+}
+.works .projects .project .content .buttons {
+  display: flex;
+  gap: 0.2rem;
+}
+.works .projects .project .content a.open-this-project {
+  background-color: #4FC0D0;
+  border: 1px solid blue;
+}
+.works .projects .project .content a.run-this-project {
+  background-color: #A2FF86;
+  border: 1px solid green;
+}
+.works .projects .project .content a.open-this-project:hover, .works .projects .project .content a.run-this-project:hover {
   background: transparent;
 }
 .works .projects .project .content .creadit {
@@ -665,13 +683,14 @@ header .title {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: rgba(33, 38, 45, 0.4);
+  background-color: var(--project-color);
   border: 1px solid rgba(33, 38, 45, 0.5);
   border-radius: calc(var(--radius) - 4px);
   padding: 0.2rem 0.6rem;
 }
 .works .projects .project .content .creadit i {
   font-size: 0.9rem;
+  color: var(--text-bold-color);
 }
 .works .projects .project .content .date-parent {
   user-select: none;
@@ -695,7 +714,7 @@ header .title {
 .works .projects .project * {
   color: white;
 }
-.works .projects .project:hover .content {
+.works .projects .project:hover .content, .works .projects .project:focus .content {
   bottom: 0;
 }
 
@@ -849,6 +868,7 @@ footer address a:hover i {
   --text-bold-color: #f1f2f4;
   --text-color: #b8c0c7;
   --container-color: #171f26;
+  --project-color: rgba(23, 31, 38, .7);
   --body-color: hsl(207, 40%, 8%);
   --anim-bg-color: rgba(255, 255, 255, 0.2);
 }

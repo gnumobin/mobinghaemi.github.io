@@ -108,7 +108,7 @@
             width: calc(100% - 2rem);
             height: calc(100% - 2rem);
 
-            background: rgba(0, 0, 0, 0.671);
+            background: var(--project-color);
             position: absolute;
             bottom: -105%;
             left: 0;
@@ -130,18 +130,33 @@
 
             .title {
                 font-size: calc(var(--font-xl-size) + .75rem);
+                color: var(--text-bold-color);
                 margin-top: -.5rem;
             }
 
-            a.open-this-project {
-                background-color: var(--first-color);
-                border: 1px solid var(--first-color);
+            a {
                 border-radius: 50%;
                 padding: .15rem .22rem;
-                line-height: 10px;
+                * {
+                    color: #213;
+                }
             }
 
-            a.open-this-project:hover {
+            .buttons {
+                display: flex;
+                gap: .2rem;
+            }
+
+            a.open-this-project {
+                background-color: #4FC0D0;
+                border: 1px solid blue;
+            }
+            a.run-this-project {
+                background-color: #A2FF86;
+                border: 1px solid green;
+            }
+
+            a.open-this-project:hover, a.run-this-project:hover {
                 background: transparent;
             }
 
@@ -152,13 +167,14 @@
                 top: 10px;
                 right: 10px;
 
-                background-color: rgba(33, 38, 45, .4);
+                background-color: var(--project-color);
                 border: 1px solid rgba(33, 38, 45, .5);
                 border-radius: calc(var(--radius) - 4px);
                 padding: .2rem .6rem;
 
                 i {
                     font-size: .9rem;
+                    color: var(--text-bold-color);
                 }
             }
 
@@ -195,9 +211,15 @@
         }
     }
 
-    .project:hover .content {
+    .project:hover .content, .project:focus .content {
         bottom: 0;
     }
+
+    // .project:focus-within {
+    // }
+
+    // .project:focus-visible {
+    // }
 }
 
 .works .skills {

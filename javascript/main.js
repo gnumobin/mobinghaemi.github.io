@@ -117,3 +117,5 @@ function overlayHandler() {
 // PWA
 if ("serviceWorker" in navigator)
     navigator.serviceWorker.register("sw.js").then(r => { }).catch(err => console.log(err))
+
+window.onbeforeunload = function () { return "" };
