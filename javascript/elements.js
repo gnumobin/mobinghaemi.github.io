@@ -31,9 +31,9 @@ const loadProjectsEl = projectsEl => {
                         <a class="open-this-project" href=${project?.link} title="open this project at github">
                         <i class="bi bi-link-45deg"></i>
                         </a>
-                        ${project?.live && `<a class="run-this-project" href=${project?.live} title="run this project">
+                        ${project.live ? `<a class="run-this-project" href=${project?.live} title="run this project">
                             <i class="bi bi-play"></i>
-                        </a>`}
+                        </a>` : ''}
                         </div>
                         <div class="date-parent">
                             <span class='date'>${project.date}</span>
