@@ -16,7 +16,6 @@ const loadNeededElements = (projectsEl, skillsEl) => {
 const loadProjectsEl = projectsEl => {
     projectsData.forEach((project, number) => {
         const html = `
-            <div class='border-anime'>
                 <div class="project" tabindex="-1">
                 <img class="project-bg" src="../assets/img/${project?.picture}" alt="${project?.alt}" loading="lazy">
                 <i class="bi bi-emoji-smile-upside-down-fill emoji"></i>
@@ -31,17 +30,16 @@ const loadProjectsEl = projectsEl => {
                         <a class="open-this-project" href=${project?.link} title="open this project at github">
                         <i class="bi bi-link-45deg"></i>
                         </a>
-                        ${project?.live && `<a class="run-this-project" href=${project?.live} title="run this project">
+                        ${project.live ? `<a class="run-this-project" href=${project?.live} title="run this project">
                             <i class="bi bi-play"></i>
-                        </a>`}
+                        </a>` : ''}
                         </div>
                         <div class="date-parent">
                             <span class='date'>${project.date}</span>
                             <i class="bi bi-calendar"></i>
                         </div>
                     </div>
-                </div>
-            </div> `
+                </div>`
         // Add Project to html
         projectsEl.insertAdjacentHTML("beforeend", html)
     });

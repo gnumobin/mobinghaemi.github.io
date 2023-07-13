@@ -30,17 +30,23 @@
     transform: translate(-50%, -50%) scale(0);
     transition: var(--transition) transform;
 
-    #closeImgShow {
-        cursor: pointer;
+    button#closeImgShow {
         position: absolute;
-        top: 0; left: 0;
-        padding: .5rem;
+        top: 5px;
+        left: 5px;
+        padding: 0 1rem;
+        background: transparent;
+
+        * {
+            color: tomato;
+        }
     }
 
     img {
         width: 100%;
         border-radius: var(--radius);
     }
+
     i {
         position: absolute;
         top: 50%;

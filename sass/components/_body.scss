@@ -1,9 +1,2 @@
 @import "profile";
 @import "works";
-
-
-@property --border-angle {
-    syntax: "<angle>";
-    inherits: true;
-    initial-value: 0turn;
-}

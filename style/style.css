@@ -150,10 +150,6 @@ a:hover * {
   color: aqua;
 }
 
-i {
-  pointer-events: none;
-}
-
 .circles {
   position: absolute;
   z-index: -1;
@@ -323,12 +319,15 @@ i {
   transform: translate(-50%, -50%) scale(0);
   transition: var(--transition) transform;
 }
-.img-show #closeImgShow {
-  cursor: pointer;
+.img-show button#closeImgShow {
   position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0.5rem;
+  top: 5px;
+  left: 5px;
+  padding: 0 1rem;
+  background: transparent;
+}
+.img-show button#closeImgShow * {
+  color: tomato;
 }
 .img-show img {
   width: 100%;
@@ -591,24 +590,6 @@ header .title {
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
-.works .projects .border-anime {
-  border-radius: var(--radius);
-  --border-size: 3px;
-  --border-angle: 0turn;
-  background-image: conic-gradient(from var(--border-angle), #213, #112 50%, #213), conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
-  background-size: calc(100% - var(--border-size) * 2) calc(100% - var(--border-size) * 2), cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  animation: bg-spin 3s linear infinite;
-}
-.works .projects .border-anime:hover {
-  animation-play-state: paused;
-}
-@keyframes bg-spin {
-  to {
-    --border-angle: 1turn;
-  }
-}
 .works .projects .project {
   width: 400px;
   height: 240px;
@@ -657,23 +638,23 @@ header .title {
   margin-top: -0.5rem;
 }
 .works .projects .project .content a {
-  border-radius: 50%;
-  padding: 0.15rem 0.22rem;
+  border-radius: var(--radius);
+  padding: 0.1rem 0.22rem;
 }
 .works .projects .project .content a * {
-  color: #213;
+  color: var(--body-color);
 }
 .works .projects .project .content .buttons {
   display: flex;
   gap: 0.2rem;
 }
 .works .projects .project .content a.open-this-project {
-  background-color: #4FC0D0;
-  border: 1px solid blue;
+  background-color: rgb(66, 165, 245);
+  border: 1px solid rgb(66, 164, 245);
 }
 .works .projects .project .content a.run-this-project {
-  background-color: #A2FF86;
-  border: 1px solid green;
+  background-color: rgb(66, 245, 102);
+  border: 1px solid rgb(66, 245, 102);
 }
 .works .projects .project .content a.open-this-project:hover, .works .projects .project .content a.run-this-project:hover {
   background: transparent;
@@ -746,11 +727,6 @@ header .title {
   margin-bottom: 0.3rem;
 }
 
-@property --border-angle {
-  syntax: "<angle>";
-  inherits: true;
-  initial-value: 0turn;
-}
 footer {
   margin: 3rem 0 0.5rem;
   display: flex;

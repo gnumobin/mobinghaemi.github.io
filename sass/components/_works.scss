@@ -42,39 +42,6 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 
-    .border-anime {
-
-        border-radius: var(--radius);
-
-        --border-size: 3px;
-        --border-angle: 0turn;
-        // width: 60vmin;
-        // height: 50vmin;
-        background-image: conic-gradient(from var(--border-angle),
-                #213,
-                #112 50%,
-                #213),
-            conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
-        background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)),
-            cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-
-        animation: bg-spin 3s linear infinite;
-
-
-        &:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes bg-spin {
-            to {
-                --border-angle: 1turn;
-            }
-        }
-
-    }
-
     .project {
         width: 400px;
         height: 240px;
@@ -135,10 +102,10 @@
             }
 
             a {
-                border-radius: 50%;
-                padding: .15rem .22rem;
+                border-radius: var(--radius);
+                padding: .1rem .22rem;
                 * {
-                    color: #213;
+                    color: var( --body-color);
                 }
             }
 
@@ -148,12 +115,12 @@
             }
 
             a.open-this-project {
-                background-color: #4FC0D0;
-                border: 1px solid blue;
+                background-color: rgb(66, 165, 245);
+                border: 1px solid rgb(66, 164, 245);
             }
             a.run-this-project {
-                background-color: #A2FF86;
-                border: 1px solid green;
+                background-color: rgb(66, 245, 102);
+                border: 1px solid rgb(66, 245, 102);
             }
 
             a.open-this-project:hover, a.run-this-project:hover {
