@@ -1,10 +1,11 @@
 {
     "name": "mobin ghaemi",
     "short_name": "mobin ghaemi",
-    "start_url": ".",
+    "start_url": "/",
     "background_color": "#0c151d",
     "theme_color": "#0c151d",
     "display": "standalone",
+    "orientation": "portrait",
     "icons": [
         {
             "src": "images/me.png",

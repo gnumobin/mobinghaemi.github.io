@@ -1,7 +1,16 @@
-self.addEventListener("install", e => {
-    e.waitUntil(
-        caches.open('static').then(chache => {
-            return chache.addAll(["./", "./style/style.css", "images/me.png"])
-        })
-    )
+const staticCacheName = 'static';
+const assets = [
+    '/',
+    '/index.html',
+    '/style/style.css',
+    '/javascript/main.js'
+]
+
+self.addEventListener('install', e => {
+    console.log(e)
+    e.waitUntil(caches.open(staticCacheName).then(cache => cache.addAll(assets)))
+})
+
+self.addEventListener('fetch', e => {
+    e.respondWith(caches.match(e.request).then(cacheRes => cacheRes || fetch(e.request)))
 })
