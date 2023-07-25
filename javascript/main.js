@@ -51,22 +51,29 @@ settingsBtn.addEventListener('click', e => {
     e.preventDefault()
     $('.home-page').style.display = 'none'
     $('.settings-page').style.display = 'block'
+    circlesBox.style.height = `${container.clientHeight + 10}px`
+    overlayHandler()
 })
 
 homeBtn.addEventListener('click', e => {
     e.preventDefault()
     $('.home-page').style.display = 'block'
     $('.settings-page').style.display = 'none'
+    circlesBox.style.height = `${container.clientHeight + 10}px`
+    overlayHandler()
+
 })
 settingsForm.addEventListener('submit', e => {
     e.preventDefault()
     const color = $('#colourInput').value;
     const radius = $('#radiusInput').value;
-    document.cookie = `color=${color}, radius=${+radius}px`
+    const transition = $('#elementAnimation').checked ? '.25s' : '0s';
+    document.cookie = `color=${color}, radius=${+radius}px, transition=${transition}`
+    location.reload()
 })
 resetSettingsBtn.addEventListener('click', () => {
-    document.cookie = `color=#42a5f5, radius=8px`
-    location.reload() 
+    document.cookie = `color=#42a5f5, radius=8px, transition=.25s`
+    location.reload()
 })
 
 // Funcs
@@ -79,6 +86,7 @@ window.onload = _ => {
         const cookies = cookie.split(',')
         r.style.setProperty('--first-color', cookies[0].split('=')[1])
         r.style.setProperty('--radius', cookies[1].split('=')[1])
+        r.style.setProperty('--transition', cookies[2].split('=')[1])
     }
 
     // set user theme on web

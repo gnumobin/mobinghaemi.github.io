@@ -218,16 +218,27 @@
         <div class="settings-page">
             <h1>Settings Page</h1>
 
-
             <form id="settingsForm">
                 <label>
                     <b>First Colour : </b>
-                    <input type="color" id="colourInput">
+                    <input type="color" id="colourInput" value="#42a5f5">
                 </label>
+
+
                 <label>
                     <b>Element Radius : </b>
                     <input type="number" id="radiusInput" min="1" max="30" value="8">
                 </label>
+
+
+                <label for="">
+                    <b>Element Animation : </b>
+                    <label class="switch">
+                        <input type="checkbox" checked id="elementAnimation">
+                        <span class="slider round"></span>
+                    </label>
+                </label>
+
                 <button id="saveBtn">Save</button>
                 <button type="button" id="resetSettings">Reset</button>
             </form>

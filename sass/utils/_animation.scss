@@ -127,30 +127,30 @@
 
 @keyframes author-pic-anim {
     0% {
-        box-shadow: 0 8px 24px hsla(207, 90%, 61%, .25);
+        box-shadow: 0 8px 24px var(--first-color);
     }
 
     16.666666667% {
-        box-shadow: 8px 8px 24px hsla(207, 90%, 61%, .25);
+        box-shadow: 8px 8px 24px var(--first-color);
     }
 
     33.333333334% {
-        box-shadow: 8px -8px 24px hsla(207, 90%, 61%, .25);
+        box-shadow: 8px -8px 24px var(--first-color);
     }
 
     50.000000001% {
-        box-shadow: 0 -8px 24px hsla(207, 90%, 61%, .25);
+        box-shadow: 0 -8px 24px var(--first-color);
     }
 
     66.666666668% {
-        box-shadow: -8px -8px 24px hsla(207, 90%, 61%, .25);
+        box-shadow: -8px -8px 24px var(--first-color);
     }
 
     83.333333335% {
-        box-shadow: -8px 8px 24px hsla(207, 90%, 61%, .25);
+        box-shadow: -8px 8px 24px var(--first-color);
     }
 
     100% {
-        box-shadow: 0 8px 24px hsla(207, 90%, 61%, .25);
+        box-shadow: 0 8px 24px var(--first-color);
     }
 }

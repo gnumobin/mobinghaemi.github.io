@@ -8,7 +8,8 @@
 
         .author-pic {
             border: 2px inset;
-            border-color: hsla(207, 90%, 61%, .7);
+            // hsla(207, 90%, 61%, .25)
+            border-color: var(--first-color);
 
             border-radius: 50%;
             width: 150px;

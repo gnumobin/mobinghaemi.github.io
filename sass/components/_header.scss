@@ -14,7 +14,7 @@
     border-top-left-radius: var(--radius);
 
     li a {
-        background-color: rgba(20, 20, 20, 0.7);
+        background-color: var(--menu-item-color);
         padding: 1.8rem 1.5rem;
         border-radius: var(--radius);
         justify-content: center;
