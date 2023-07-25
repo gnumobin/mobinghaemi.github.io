@@ -11,6 +11,7 @@
     flex-direction: column;
     gap: 1.5rem;
     transition: var(--transition) right;
+    border-top-left-radius: var(--radius);
 
     li a {
         background-color: rgba(20, 20, 20, 0.7);
@@ -37,7 +38,7 @@
 
 header {
     direction: rtl;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     // magic
 
     nav ul {

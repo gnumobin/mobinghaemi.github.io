@@ -5,6 +5,7 @@
 @import "base/fonts";
 @import "base/default";
 
+@import 'utils/menu';
 @import "utils/animation";
 @import "utils/mixin";
 @import "utils/usefull_classes.scss";
@@ -16,4 +17,4 @@
 @import "responsive";
 
 @import "utils/themes";
-@import 'utils/menu';
+@import "./components/settings";

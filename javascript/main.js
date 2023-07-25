@@ -1,9 +1,9 @@
 import { $ } from "./utils.js";
+// Cookie
+let cookie = document.cookie;
 // Variables
 const body = $('body');
 const overlay = $('.overlay');
-// Calculate Page Height 
-let html = document.documentElement;
 // Get Container
 let container = $('.container');
 const themeSwitchBtn = $('#themeSwitch input');
@@ -24,6 +24,12 @@ const circlesBox = $('.circles');
 // Menu
 const openMenuBtn = $('#openMenu');
 const posMenu = $('.pos-menu')
+// Pages
+const homeBtn = $('#homeBtn')
+// Settings
+const settingsBtn = $('#settingsBtn');
+const settingsForm = $('#settingsForm')
+const resetSettingsBtn = $('#resetSettings');
 
 // Events
 // Switch Theme (Checkbox) Ev
@@ -41,11 +47,40 @@ openMenuBtn.addEventListener('click', () => {
     overlay.style.display = 'block'
     posMenu.style.right = '0'
 })
+settingsBtn.addEventListener('click', e => {
+    e.preventDefault()
+    $('.home-page').style.display = 'none'
+    $('.settings-page').style.display = 'block'
+})
+
+homeBtn.addEventListener('click', e => {
+    e.preventDefault()
+    $('.home-page').style.display = 'block'
+    $('.settings-page').style.display = 'none'
+})
+settingsForm.addEventListener('submit', e => {
+    e.preventDefault()
+    const color = $('#colourInput').value;
+    const radius = $('#radiusInput').value;
+    document.cookie = `color=${color}, radius=${+radius}px`
+})
+resetSettingsBtn.addEventListener('click', () => {
+    document.cookie = `color=#42a5f5, radius=8px`
+    location.reload() 
+})
 
 // Funcs
 
 // Run Codes before runnig page
 window.onload = _ => {
+    const r = document.querySelector(':root');
+
+    if (cookie.startsWith('color')) {
+        const cookies = cookie.split(',')
+        r.style.setProperty('--first-color', cookies[0].split('=')[1])
+        r.style.setProperty('--radius', cookies[1].split('=')[1])
+    }
+
     // set user theme on web
     callThemeFromLS()
     // Update Years Of Work
