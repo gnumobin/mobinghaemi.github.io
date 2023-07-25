@@ -1,7 +1,45 @@
+.pos-menu {
+    position: fixed;
+    z-index: 20;
+    background-color: var(--container-color);
+    padding: 2rem 1.5rem;
+    width: 350px;
+    right: calc(-350px + -4rem);
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: var(--transition) right;
+
+    li a {
+        background-color: rgba(20, 20, 20, 0.7);
+        padding: 1.8rem 1.5rem;
+        border-radius: var(--radius);
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+
+        i {
+            color: var(--text-bold-color) !important;
+            background-color: var(--first-color);
+            height: 100%;
+            width: 20%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
 header {
     direction: rtl;
     margin-bottom: 1rem;
     // magic
+
     nav ul {
         @include row;
         align-items: center;
@@ -22,6 +60,15 @@ header {
         }
         li#coffee i{
             font-size: 2rem;
+        }
+        #openMenu {
+            background-color: var(--project-color);
+            border: 1px solid var(--project-color);
+            padding: .5rem .55rem;
+            border-radius: var(--radius);
+        }
+        #openMenu:hover {
+            background-color: var(--anim-bg-colo);
         }
     }
     .toggle { 

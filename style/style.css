@@ -143,6 +143,13 @@ button, li, img {
   background-color: indigo;
 }
 
+a {
+  color: var(--text-bold-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 a:hover {
   color: aqua !important;
 }
@@ -338,6 +345,41 @@ a:hover * {
   top: 50%;
 }
 
+.pos-menu {
+  position: fixed;
+  z-index: 20;
+  background-color: var(--container-color);
+  padding: 2rem 1.5rem;
+  width: 350px;
+  right: calc(-350px - 4rem);
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: var(--transition) right;
+}
+.pos-menu li a {
+  background-color: rgba(20, 20, 20, 0.7);
+  padding: 1.8rem 1.5rem;
+  border-radius: var(--radius);
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.pos-menu li a i {
+  color: var(--text-bold-color) !important;
+  background-color: var(--first-color);
+  height: 100%;
+  width: 20%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+}
+
 header {
   direction: rtl;
   margin-bottom: 1rem;
@@ -362,6 +404,15 @@ header nav ul li {
 }
 header nav ul li#coffee i {
   font-size: 2rem;
+}
+header nav ul #openMenu {
+  background-color: var(--project-color);
+  border: 1px solid var(--project-color);
+  padding: 0.5rem 0.55rem;
+  border-radius: var(--radius);
+}
+header nav ul #openMenu:hover {
+  background-color: var(--anim-bg-colo);
 }
 header .toggle {
   --size: 2rem;
@@ -764,6 +815,9 @@ footer address a:hover i {
   .img-show {
     width: 53%;
   }
+  .pos-menu {
+    width: 300px;
+  }
 }
 @media screen and (max-width: 767px) {
   .projects {
@@ -778,8 +832,20 @@ footer address a:hover i {
   .img-show {
     width: 72%;
   }
+  .pos-menu {
+    width: 280px;
+  }
 }
 @media screen and (max-width: 424px) {
+  .pos-menu {
+    width: 250px;
+  }
+  .pos-menu li a {
+    justify-content: right;
+  }
+  .pos-menu li a i {
+    width: 25%;
+  }
   .project {
     width: 350px !important;
     height: 220px !important;
@@ -806,6 +872,15 @@ footer address a:hover i {
   }
 }
 @media screen and (max-width: 374px) {
+  .pos-menu {
+    width: 220px;
+  }
+  .pos-menu li a {
+    justify-content: right;
+  }
+  .pos-menu li a i {
+    width: 25%;
+  }
   .project {
     width: 300px !important;
     height: 180px !important;
@@ -847,6 +922,59 @@ footer address a:hover i {
   --project-color: rgba(23, 31, 38, .7);
   --body-color: hsl(207, 40%, 8%);
   --anim-bg-color: rgba(255, 255, 255, 0.2);
+}
+
+#menu__toggle {
+  opacity: 0;
+}
+
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
+
+.menu__btn {
+  position: fixed;
+  top: 20px;
+  left: 7.5px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--text-bold-color);
+  transition-duration: 0.25s;
+}
+
+.menu__btn > span::before {
+  content: "";
+  top: -8px;
+}
+
+.menu__btn > span::after {
+  content: "";
+  top: 8px;
 }
 
 /*# sourceMappingURL=style.css.map */

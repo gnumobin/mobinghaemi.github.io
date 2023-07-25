@@ -9,6 +9,9 @@
     .img-show {
         width: 53%;
     }
+    .pos-menu {
+        width: 300px;
+    }
 }
 
 // Tablet (Normal) Size : 768px - 1px
@@ -25,10 +28,23 @@
     .img-show {
         width: 72%;
     }
+    .pos-menu {
+        width: 280px;
+    }
 }
 
 // Mobile (Large) Size : 425px - 1px
 @media screen and (max-width : 424px) {
+    .pos-menu {
+        width: 250px;
+        li a {
+            justify-content: right;
+
+            i {
+                width: 25%;
+            }
+        }
+    }
     .project {
         width: 350px !important;
         height: 220px !important;
@@ -64,6 +80,16 @@
 
 // Mobile (Medium) Size : 375px - 1px
 @media screen and (max-width : 374px) {
+    .pos-menu {
+        width: 220px;
+        li a {
+            justify-content: right;
+
+            i {
+                width: 25%;
+            }
+        }
+    }
     .project {
         width: 300px !important;
         height: 180px !important;

@@ -64,6 +64,12 @@ button , li , img {
     color: white;
     background-color: indigo;
 }
+a {
+    color: var(--text-bold-color);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
 a:hover {
     color: aqua !important;
     * {

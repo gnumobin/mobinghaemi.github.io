@@ -60,6 +60,15 @@
         <img src="assets/img/me.jpeg" alt="image">
     </div>
 
+    <ul class="pos-menu">
+        <li>
+            <a href="https://www.coffeete.ir/mobinghaemi">
+                <i class="bi bi-cup-hot-fill"></i>
+                <span>Buy be a coffee</span>
+            </a>
+        </li>
+    </ul>
+
     <main class="container area">
 
         <ul class="circles">
@@ -75,15 +84,18 @@
             <li></li>
         </ul>
 
+
         <header>
             <nav>
-                <ul>
+                <ul class="pc-menu">
                     <li id="themeSwitch"><input id="toggle" class="toggle theme" type="checkbox" checked></li>
-                    <li id="coffee" title="buy me a coffee">
-                        <a href='https://www.coffeete.ir/mobinghaemi'>
-                            <span>Buy me a coffee</span>
-                            <i class="bi bi-cup-hot-fill"></i>
-                        </a>
+
+                    <li id="openMenu">
+                        <!-- <i class="bi bi-list"></i> -->
+                        <input id="menu__toggle" type="checkbox" />
+                        <label class="menu__btn" for="menu__toggle">
+                            <span></span>
+                        </label>
                     </li>
                 </ul>
             </nav>
@@ -189,7 +201,6 @@
     <script src="javascript/data.js" type="module" defer></script>
     <script src="javascript/main.js" type="module" defer></script>
     <script src="javascript/elements.js" type="module" defer></script>
-    <script src="javascript/sound.js" type="module" defer></script>
 </body>
 
 </html>

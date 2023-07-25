@@ -1,4 +1,4 @@
-import { $, playSound } from "./utils.js";
+import { $ } from "./utils.js";
 // Variables
 const body = $('body');
 const overlay = $('.overlay');
@@ -21,6 +21,9 @@ const closeImgShowBtn = $('#closeImgShow')
 const yearsOfWorkEl = $('.years-of-work')
 // Circles Box (Bg anime)
 const circlesBox = $('.circles');
+// Menu
+const openMenuBtn = $('#openMenu');
+const posMenu = $('.pos-menu')
 
 // Events
 // Switch Theme (Checkbox) Ev
@@ -33,6 +36,11 @@ authorPictureEl.addEventListener('click', showAuthorPicture)
 overlay.addEventListener('click', overlayHandler)
 // close image biggest element
 closeImgShowBtn.addEventListener('click', overlayHandler)
+// Open Menu
+openMenuBtn.addEventListener('click', () => {
+    overlay.style.display = 'block'
+    posMenu.style.right = '0'
+})
 
 // Funcs
 
@@ -54,7 +62,6 @@ function themeSwitchFunc(e) {
     // Save Theme for next refresh
     condition ? localStorage.setItem('theme', JSON.stringify({ name: 'light', condition: true }))
         : localStorage.setItem('theme', JSON.stringify({ name: 'dark', condition: false }))
-    playSound('../assets/sound/toggle.mp3')
 }
 // Read Saved theme from localStorage
 function callThemeFromLS() {
@@ -105,18 +112,18 @@ function tabsHandlerFunc(index, e) {
     // Set active on active li , set active el position
     index ? activeEl.classList.add('position') : activeEl.classList.remove('position')
     // Play some sound
-    playSound('../assets/sound/paper.mp3')
 }
 // Show Biggest author picture 
 function showAuthorPicture() {
     overlay.style.display = 'block'
     imgShowEl.style.transform = 'translate(-50%, -50%) scale(1)'
-    playSound('../assets/sound/popup.ogg')
 }
 // After Click on Overlay
 function overlayHandler() {
     overlay.style.display = 'none'
     imgShowEl.style.transform = 'translate(-50%, -50%) scale(0)'
+    posMenu.style.right = 'calc(-350px + -4rem)';
+    $('#menu__toggle').checked = false
 }
 // PWA
 if ("serviceWorker" in navigator)
