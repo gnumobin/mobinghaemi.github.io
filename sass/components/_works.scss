@@ -17,11 +17,12 @@
         }
 
         li.active {
-            padding: 1.75rem 0;
+            // padding: 1.75rem 0;
+            padding: 1.25rem 0;
             width: 48% !important;
             background-color: var(--body-color);
             position: absolute;
-            z-index: -1;
+            // z-index: -1;
             left: 5px;
             transition: var(--transition) left;
         }

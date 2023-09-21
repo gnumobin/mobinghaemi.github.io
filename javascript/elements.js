@@ -89,7 +89,7 @@ const updateUI_G = async G_PROFILE => {
         addressEl.textContent = data?.location
         // Update Followers
         githubFollowersEl.textContent = data?.followers
-    } else authorPictureEl.src = '../assets/img/me.jpeg'
+    } else authorPictureEl.src = '/images/me.png'
 
 }
 updateUI_G(G_PROFILE)

@@ -45,7 +45,7 @@ export const projectsData = [
         tag: 'web',
         name: 'Portfolio',
         link: 'https://github.com/mobinghaemi/mobinghaemi.github.io',
-        picture: 'project-3.jpeg',
+        picture: 'project-3-light.png',
         alt: 'This Website',
         ID: 636470619,
         getWatchers,

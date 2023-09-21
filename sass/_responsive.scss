@@ -43,6 +43,12 @@
             i {
                 width: 25%;
             }
+            span.mb-txt {
+                display: inline;
+            }
+            span.pc-txt {
+                display: none;
+            }
         }
     }
     .project {

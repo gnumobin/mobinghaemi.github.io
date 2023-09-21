@@ -23,7 +23,10 @@
 
             animation: author-pic-anim 10s infinite ease-in;
 
-            cursor: pointer;
+            cursor: zoom-in;
+            cursor: -moz-zoom-in;
+            cursor: -webkit-zoom-in;
+
 
             position: relative;
 
@@ -127,6 +130,8 @@
                 gap: .5rem;
                 position: relative;
                 overflow: hidden;
+
+                cursor: wait;
 
                 *:not(i) {
                     color: white;

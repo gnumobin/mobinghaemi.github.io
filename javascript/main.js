@@ -24,6 +24,7 @@ const circlesBox = $('.circles');
 // Menu
 const openMenuBtn = $('#openMenu');
 const posMenu = $('.pos-menu')
+let menuIsOpen = false;
 
 // Events
 // Switch Theme (Checkbox) Ev
@@ -42,15 +43,6 @@ openMenuBtn.addEventListener('click', openMenuFunc)
 
 // Run Codes before runnig page
 window.onload = _ => {
-    const r = document.querySelector(':root');
-
-    if (cookie.startsWith('color')) {
-        const cookies = cookie.split(',')
-        r.style.setProperty('--first-color', cookies[0].split('=')[1])
-        r.style.setProperty('--radius', cookies[1].split('=')[1])
-        r.style.setProperty('--transition', cookies[2].split('=')[1])
-    }
-
     // set user theme on web
     callThemeFromLS()
     // Update Years Of Work
@@ -61,11 +53,14 @@ window.onload = _ => {
 function openMenuFunc() {
     overlay.style.display = 'block'
     posMenu.style.right = '0'
+    menuIsOpen = true
 }
 // Switch Theme Func
 function themeSwitchFunc(e) {
     // Set Dark Theme Styles
     body.classList.toggle('dark-theme');
+    // Edit Images
+    document.querySelectorAll('.project')[2].children[0].src = body.classList.contains('dark-theme') ? '/assets/img/project-3.jpeg' : '/assets/img/project-3-light.png'
     // Create a condition for save user theme
     const condition = e.target.checked;
     // Save Theme for next refresh
@@ -87,6 +82,9 @@ function callThemeFromLS() {
     // set saved theme styles on website
     body.classList.toggle(`${theme}-theme`);
     themeSwitchBtn.checked = condition;
+
+    // Edit Images
+    document.querySelectorAll('.project')[2].children[0].src = body.classList.contains('dark-theme') ? '/assets/img/project-3.jpeg' : '/assets/img/project-3-light.png'
 }
 // Add ScrollReveal Animations (Load Elements Animations)
 const showElAnimation = () => {
@@ -113,6 +111,7 @@ showElAnimation()
 // Tabs Handle Function
 function tabsHandlerFunc(index, e) {
     const activeEl = $('.active');
+    if (index === 2) return;
     // hidden all tabs
     tabsEl.forEach((_, i) => tabsEl[i].classList.add('hidden'))
     // Show index Section
@@ -120,7 +119,7 @@ function tabsHandlerFunc(index, e) {
     circlesBox.style.height = `${container.clientHeight + 10}px`
     // Set active on active li , set active el position
     index ? activeEl.classList.add('position') : activeEl.classList.remove('position')
-    // Play some sound
+    activeEl.textContent = index === 0 ? 'Projects' : 'Skills'
 }
 // Show Biggest author picture 
 function showAuthorPicture() {
@@ -132,19 +131,19 @@ function overlayHandler() {
     overlay.style.display = 'none'
     imgShowEl.style.transform = 'translate(-50%, -50%) scale(0)'
     posMenu.style.right = 'calc(-350px + -4rem)';
-    $('#menu__toggle').checked = false
+    if (menuIsOpen) {
+        openMenuBtn.classList.toggle('opened')
+    }
+    menuIsOpen = false
 }
 // PWA
 if ("serviceWorker" in navigator)
     navigator.serviceWorker.register("sw.js").then(r => { }).catch(err => console.log(err))
 
 // window.onbeforeunload = function () { return "" };
-
-
 // More Options For Better website
 document.addEventListener('keydown', e => {
     const KEY = e.key
-    console.log(e);
     switch (KEY) {
         case 'Escape':
             overlayHandler()
