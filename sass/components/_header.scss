@@ -13,6 +13,15 @@
     transition: var(--transition) right;
     border-top-left-radius: var(--radius);
 
+    .achievements {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        img {
+            width: 50px;
+        }
+    }
     li a {
         background-color: var(--menu-item-color);
         padding: 1.8rem 1.5rem;

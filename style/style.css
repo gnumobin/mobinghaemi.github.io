@@ -5,8 +5,7 @@ a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
+dl, dt, dd, ol, ul, li, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
@@ -156,6 +155,15 @@ a:hover {
 }
 a:hover * {
   color: aqua;
+}
+
+fieldset {
+  border: 1px solid var(--menu-item-color);
+  border-radius: var(--radius);
+}
+fieldset legend {
+  font-weight: 550;
+  padding: 0 0.25rem;
 }
 
 #menu__toggle {
@@ -348,6 +356,14 @@ a:hover * {
     box-shadow: 0 8px 24px var(--first-color);
   }
 }
+@keyframes rotation-tick {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .center {
   display: flex;
   flex-direction: column;
@@ -473,6 +489,15 @@ input:checked + .slider:before {
   gap: 1.5rem;
   transition: var(--transition) right;
   border-top-left-radius: var(--radius);
+}
+.pos-menu .achievements {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.pos-menu .achievements img {
+  width: 50px;
 }
 .pos-menu li a {
   background-color: var(--menu-item-color);
@@ -612,6 +637,7 @@ header .title {
   position: absolute;
   top: -8px;
   color: var(--first-color);
+  animation: rotation-tick 3s infinite linear;
 }
 .profile .me .author-name::after {
   content: "JS Programmer";
@@ -1038,38 +1064,6 @@ footer address a:hover i {
   --body-color: hsl(207, 40%, 8%);
   --anim-bg-color: rgba(255, 255, 255, 0.2);
   --menu-item-color: rgba(20, 20, 20, 0.7);
-}
-
-.settings-page {
-  display: none;
-  height: 100vh !important;
-}
-
-#settingsForm {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 2rem 0;
-}
-#settingsForm label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-#settingsForm button {
-  width: 150px;
-  padding: 1rem;
-  background-color: var(--first-color);
-  font-size: var(--normal-font-size);
-  color: var(--text-bold-color);
-}
-#settingsForm input {
-  padding: 0.5rem;
-  border: none;
-  background-color: var(--project-color);
-  border-radius: var(--radius);
-  outline: 0;
-  color: var(--text-bold-color);
 }
 
 /*# sourceMappingURL=style.css.map */

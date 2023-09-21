@@ -24,12 +24,6 @@ const circlesBox = $('.circles');
 // Menu
 const openMenuBtn = $('#openMenu');
 const posMenu = $('.pos-menu')
-// Pages
-const homeBtn = $('#homeBtn')
-// Settings
-const settingsBtn = $('#settingsBtn');
-const settingsForm = $('#settingsForm')
-const resetSettingsBtn = $('#resetSettings');
 
 // Events
 // Switch Theme (Checkbox) Ev
@@ -43,10 +37,7 @@ overlay.addEventListener('click', overlayHandler)
 // close image biggest element
 closeImgShowBtn.addEventListener('click', overlayHandler)
 // Open Menu
-openMenuBtn.addEventListener('click', () => {
-    overlay.style.display = 'block'
-    posMenu.style.right = '0'
-})
+openMenuBtn.addEventListener('click', openMenuFunc)
 // Funcs
 
 // Run Codes before runnig page
@@ -66,6 +57,10 @@ window.onload = _ => {
     yearsOfWorkEl.textContent = `+${new Date().getFullYear() - 2021}`;
     // Set Page Height for bg anime
     circlesBox.style.height = `${container.clientHeight + 10}px`
+}
+function openMenuFunc() {
+    overlay.style.display = 'block'
+    posMenu.style.right = '0'
 }
 // Switch Theme Func
 function themeSwitchFunc(e) {
@@ -144,3 +139,18 @@ if ("serviceWorker" in navigator)
     navigator.serviceWorker.register("sw.js").then(r => { }).catch(err => console.log(err))
 
 // window.onbeforeunload = function () { return "" };
+
+
+// More Options For Better website
+document.addEventListener('keydown', e => {
+    const KEY = e.key
+    console.log(e);
+    switch (KEY) {
+        case 'Escape':
+            overlayHandler()
+            break;
+        case 'm':
+            if (e.ctrlKey) openMenuFunc()
+            break;
+    }
+})

@@ -4,7 +4,7 @@ const star = async () => {
     return data
 }
 
-async function getWatchers () {
+async function getWatchers() {
     const repos = await star();
     const newData = repos.map(repo => this.ID === repo.id && repo.watchers)
     const index = newData.find(data => Boolean(data))
@@ -27,8 +27,8 @@ export const projectsData = [
         alt: 'VazheYab Golden',
         ID: 510254619,
         getWatchers,
-        date : '2021',
-        live : false
+        date: '2021',
+        live: false
     },
     {
         tag: 'web',
@@ -38,8 +38,8 @@ export const projectsData = [
         alt: 'Vecia',
         ID: 575857792,
         getWatchers,
-        date : '2022',
-        live : 'https://mobinghaemi.github.io/Vecia'
+        date: '2022',
+        live: 'https://mobinghaemi.github.io/Vecia'
     },
     {
         tag: 'web',
@@ -49,8 +49,8 @@ export const projectsData = [
         alt: 'This Website',
         ID: 636470619,
         getWatchers,
-        date : '2023',
-        live : 'https://mobinghaemi.github.io/'
+        date: '2023',
+        live: 'https://mobinghaemi.github.io/'
     }
 ]
 // Skills (HTML , Css , ...) Data

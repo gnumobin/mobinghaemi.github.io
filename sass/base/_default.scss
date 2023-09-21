@@ -76,6 +76,11 @@ a:hover {
         color: aqua ;
     }
 }
-// i {
-//     pointer-events: none;
-// }
+fieldset {
+    border: 1px solid var(--menu-item-color);
+    border-radius: var(--radius);
+    legend {
+        font-weight: 550;
+        padding: 0 0.25rem;
+    }
+}

@@ -53,6 +53,7 @@
             position: absolute;
             top: -8px;
             color: var(--first-color);
+            animation: rotation-tick 3s infinite linear;
         }
 
         .author-name::after {
@@ -71,7 +72,6 @@
             a {
                 transition: var(--transition);
             }
-
 
             i {
                 border-bottom: 1px solid transparent;
