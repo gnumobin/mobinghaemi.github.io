@@ -47,35 +47,6 @@ openMenuBtn.addEventListener('click', () => {
     overlay.style.display = 'block'
     posMenu.style.right = '0'
 })
-settingsBtn.addEventListener('click', e => {
-    e.preventDefault()
-    $('.home-page').style.display = 'none'
-    $('.settings-page').style.display = 'block'
-    circlesBox.style.height = `${container.clientHeight + 10}px`
-    overlayHandler()
-})
-
-homeBtn.addEventListener('click', e => {
-    e.preventDefault()
-    $('.home-page').style.display = 'block'
-    $('.settings-page').style.display = 'none'
-    circlesBox.style.height = `${container.clientHeight + 10}px`
-    overlayHandler()
-
-})
-settingsForm.addEventListener('submit', e => {
-    e.preventDefault()
-    const color = $('#colourInput').value;
-    const radius = $('#radiusInput').value;
-    const transition = $('#elementAnimation').checked ? '.25s' : '0s';
-    document.cookie = `color=${color}, radius=${+radius}px, transition=${transition}`
-    location.reload()
-})
-resetSettingsBtn.addEventListener('click', () => {
-    document.cookie = `color=#42a5f5, radius=8px, transition=.25s`
-    location.reload()
-})
-
 // Funcs
 
 // Run Codes before runnig page
@@ -172,4 +143,4 @@ function overlayHandler() {
 if ("serviceWorker" in navigator)
     navigator.serviceWorker.register("sw.js").then(r => { }).catch(err => console.log(err))
 
-window.onbeforeunload = function () { return "" };
+// window.onbeforeunload = function () { return "" };
