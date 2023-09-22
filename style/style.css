@@ -177,7 +177,7 @@ fieldset legend {
   fill: none;
   stroke: var(--text-bold-color);
   stroke-width: 6;
-  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: stroke-dasharray 100ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .line1 {
@@ -356,6 +356,42 @@ fieldset legend {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+.btn-shine {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to right, #4d4d4d 0, var(--text-bold-color) 10%, #4d4d4d 20%);
+  background-position: 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 7.5s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  25% {
+    background-position: 60px;
+  }
+  50% {
+    background-position: 120px;
+  }
+  75% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 240px;
   }
 }
 .center {
@@ -964,6 +1000,63 @@ footer address a:hover i {
   transform: rotateY(360deg);
 }
 
+.twits {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+}
+.twits .twit {
+  width: 50%;
+  padding: 2rem;
+  text-align: center;
+  border-radius: var(--radius);
+  background-color: var(--container-color);
+  display: flex;
+  gap: 1.1rem;
+  align-items: center;
+  text-align: left;
+}
+.twits .twit p {
+  line-height: 25px;
+  text-align: center;
+  width: 100%;
+}
+.twits .twit .pic {
+  border-radius: 50%;
+  width: 75px;
+}
+.twits .twit .twit-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.twits .name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.twits .name img#blueTick {
+  width: 20px;
+}
+
+hr {
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .twit {
+    width: 75% !important;
+  }
+}
+@media screen and (max-width: 624px) {
+  .twit {
+    flex-direction: column !important;
+  }
+}
 @media screen and (max-width: 1023px) {
   .project {
     width: 360px !important;
@@ -1085,64 +1178,6 @@ footer address a:hover i {
   --body-color: hsl(207, 40%, 8%);
   --anim-bg-color: rgba(255, 255, 255, 0.2);
   --menu-item-color: rgba(20, 20, 20, 0.7);
-}
-
-.twits {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 1rem;
-  margin-top: 1rem;
-  align-items: center;
-}
-.twits .twit {
-  width: 50%;
-  padding: 2rem;
-  text-align: center;
-  border-radius: var(--radius);
-  background-color: var(--container-color);
-  display: flex;
-  gap: 1.1rem;
-  align-items: center;
-  text-align: left;
-}
-.twits .twit p {
-  line-height: 25px;
-  text-align: center;
-  width: 100%;
-}
-.twits .twit .pic {
-  border-radius: 50%;
-  width: 75px;
-}
-.twits .twit .twit-author {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-.twits .name {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.twits .name img#blueTick {
-  width: 20px;
-}
-
-hr {
-  width: 50%;
-}
-
-@media screen and (max-width: 768px) {
-  .twit {
-    width: 75% !important;
-  }
-}
-@media screen and (max-width: 624px) {
-  .twit {
-    flex-direction: column !important;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

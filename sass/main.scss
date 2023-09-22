@@ -8,14 +8,14 @@
 @import 'utils/menu';
 @import "utils/animation";
 @import "utils/mixin";
-@import "utils/usefull_classes.scss";
+@import "utils/usefull_classes";
 
 @import "components/header";
 @import "components/body";
 @import "components/footer";
+@import "components/blog";
+
 
 @import "responsive";
 
 @import "utils/themes";
-
-@import "components/blog";

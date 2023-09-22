@@ -1,3 +1,1 @@
-Hi, This is my first tweet in my personal blog :)
-,,,
-Hi this is my second twit
+Twits : https://github.com/mobinghaemi/potatoes/blob/main/potatoes.txt
