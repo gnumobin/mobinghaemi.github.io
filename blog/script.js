@@ -1,6 +1,6 @@
 const twitsEl = document.querySelector('.twits')
 
-fetch('https://raw.githubusercontent.com/mobinghaemi/mobinghaemi.github.io/master/blog/potatoes.txt').then(r => r.text()).then(r => {
+fetch('https://raw.githubusercontent.com/mobinghaemi/potatoes/master/potatoes.txt').then(r => r.text()).then(r => {
     twitsEl.innerHTML = ''
     const twits = r.split(',,,').filter(twit => twit !== '')
     twits.forEach(twit => {
