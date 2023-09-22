@@ -1,10 +1,16 @@
 const twitsEl = document.querySelector('.twits')
 
-fetch('https://raw.githubusercontent.com/mobinghaemi/potatoes/master/potatoes.txt').then(r => r.text()).then(r => {
-    twitsEl.innerHTML = ''
-    const twits = r.split(',,,').filter(twit => twit !== '')
-    twits.forEach(twit => {
-        const content = `
+getTwits();
+
+setInterval(getTwits, 10000);
+
+function getTwits() {
+    fetch('https://raw.githubusercontent.com/mobinghaemi/potatoes/master/potatoes.txt').then(r => r.text()).then(r => {
+        console.log('Get Twits!');
+        twitsEl.innerHTML = ''
+        const twits = r.split(',,,').filter(twit => twit !== '').reverse();
+        twits.forEach(twit => {
+            const content = `
         <div class="twit">
             <div class="twit-author">
                 <img src="/images/me.png" class="pic">
@@ -16,6 +22,7 @@ fetch('https://raw.githubusercontent.com/mobinghaemi/potatoes/master/potatoes.tx
             <p>${twit}</p>
         </div>
         `
-        twitsEl.innerHTML += content
+            twitsEl.innerHTML += content
+        })
     })
-})
+}
