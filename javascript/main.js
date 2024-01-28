@@ -1,6 +1,4 @@
 import { $ } from "./utils.js";
-// Cookie
-let cookie = document.cookie;
 // Variables
 const body = $('body');
 const overlay = $('.overlay');

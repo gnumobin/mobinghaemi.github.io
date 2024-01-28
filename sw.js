@@ -3,7 +3,12 @@ const assets = [
     '/',
     '/index.html',
     '/style/style.css',
-    '/javascript/main.js'
+    '/javascript/main.js',
+    '/javascript/data.js',
+    '/javascript/utils.js',
+    '/javascript/elements.js',
+    '/assets/font/Poppins-Regular.ttf',
+    '/assets/img',
 ]
 
 self.addEventListener('install', e => {

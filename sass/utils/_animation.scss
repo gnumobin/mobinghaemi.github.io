@@ -1,5 +1,3 @@
-// .area {
-// }
 
 .circles {
     position: absolute;
@@ -154,15 +152,6 @@
         box-shadow: 0 8px 24px var(--first-color);
     }
 }
-@keyframes rotation-tick {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 
 .btn-shine {
     position:relative;

@@ -13,17 +13,6 @@
     transition: var(--transition) right;
     border-top-left-radius: var(--radius);
 
-    .achievements {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        img {
-            width: 50px;
-            animation: achivments 2.5s infinite linear;
-            cursor: alias;
-        }
-    }
     li a {
         background-color: var(--body-color);
         padding: 1.8rem 1.5rem;
@@ -146,12 +135,4 @@ header {
         padding: 0.5rem 0 0;
         transition: color 500ms;
     }
-}
-
-@keyframes achivments {
-    0% {transform: translateY(-2px)}
-    25% {transform: translateY(2px)}
-    50% {transform: translateY(4px)}
-    75% {transform: translateY(2px)}
-    100% {transform: translateY(-2px)}
 }

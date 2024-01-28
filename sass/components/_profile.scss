@@ -51,12 +51,11 @@
             position: relative;
         }
 
-        .author-name > .blue-tick {
-            width: 30px;
+        .author-name > .name-status {
+            width: 35px;
             position: absolute;
-            top: -8px;
+            top: -9.5px;
             color: var(--first-color);
-            animation: rotation-tick 3s infinite linear;
         }
 
         .author-name::after {

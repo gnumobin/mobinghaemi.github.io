@@ -157,22 +157,6 @@ a:hover * {
   color: aqua;
 }
 
-fieldset {
-  border: 1px solid var(--text-color);
-  border-radius: var(--radius);
-}
-fieldset legend {
-  font-weight: 550;
-  padding: 0 0.25rem;
-}
-
-.coming-soon {
-  opacity: 0.5;
-}
-.coming-soon * {
-  cursor: not-allowed !important;
-}
-
 .line {
   fill: none;
   stroke: var(--text-bold-color);
@@ -350,14 +334,6 @@ fieldset legend {
     box-shadow: 0 8px 24px var(--first-color);
   }
 }
-@keyframes rotation-tick {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .btn-shine {
   position: relative;
   top: 50%;
@@ -520,17 +496,6 @@ input:checked + .slider:before {
   transition: var(--transition) right;
   border-top-left-radius: var(--radius);
 }
-.pos-menu .achievements {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-.pos-menu .achievements img {
-  width: 50px;
-  animation: achivments 2.5s infinite linear;
-  cursor: alias;
-}
 .pos-menu li a {
   background-color: var(--body-color);
   padding: 1.8rem 1.5rem;
@@ -628,23 +593,6 @@ header .title {
   transition: color 500ms;
 }
 
-@keyframes achivments {
-  0% {
-    transform: translateY(-2px);
-  }
-  25% {
-    transform: translateY(2px);
-  }
-  50% {
-    transform: translateY(4px);
-  }
-  75% {
-    transform: translateY(2px);
-  }
-  100% {
-    transform: translateY(-2px);
-  }
-}
 .profile {
   gap: 2rem;
 }
@@ -686,12 +634,11 @@ header .title {
 .profile .me .author-name {
   position: relative;
 }
-.profile .me .author-name > .blue-tick {
-  width: 30px;
+.profile .me .author-name > .name-status {
+  width: 35px;
   position: absolute;
-  top: -8px;
+  top: -9.5px;
   color: var(--first-color);
-  animation: rotation-tick 3s infinite linear;
 }
 .profile .me .author-name::after {
   content: "JS Programmer";
@@ -1000,63 +947,6 @@ footer address a:hover i {
   transform: rotateY(360deg);
 }
 
-.twits {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 1rem;
-  margin-top: 1rem;
-  align-items: center;
-}
-.twits .twit {
-  width: 50%;
-  padding: 2rem;
-  text-align: center;
-  border-radius: var(--radius);
-  background-color: var(--container-color);
-  display: flex;
-  gap: 1.1rem;
-  align-items: center;
-  text-align: left;
-}
-.twits .twit p {
-  line-height: 25px;
-  text-align: center;
-  width: 100%;
-}
-.twits .twit .pic {
-  border-radius: 50%;
-  width: 75px;
-}
-.twits .twit .twit-author {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-.twits .name {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.twits .name img#blueTick {
-  width: 20px;
-}
-
-hr {
-  width: 50%;
-}
-
-@media screen and (max-width: 768px) {
-  .twit {
-    width: 75% !important;
-  }
-}
-@media screen and (max-width: 624px) {
-  .twit {
-    flex-direction: column !important;
-  }
-}
 @media screen and (max-width: 1023px) {
   .project {
     width: 360px !important;
