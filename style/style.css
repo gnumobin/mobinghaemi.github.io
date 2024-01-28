@@ -334,42 +334,6 @@ a:hover * {
     box-shadow: 0 8px 24px var(--first-color);
   }
 }
-.btn-shine {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: linear-gradient(to right, #4d4d4d 0, var(--text-bold-color) 10%, #4d4d4d 20%);
-  background-position: 0;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 7.5s infinite linear;
-  animation-fill-mode: forwards;
-  -webkit-text-size-adjust: none;
-  font-weight: 600;
-  font-size: 16px;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-@keyframes shine {
-  0% {
-    background-position: 0;
-  }
-  25% {
-    background-position: 60px;
-  }
-  50% {
-    background-position: 120px;
-  }
-  75% {
-    background-position: 180px;
-  }
-  100% {
-    background-position: 240px;
-  }
-}
 .center {
   display: flex;
   flex-direction: column;
@@ -710,7 +674,6 @@ header .title {
   gap: 0.5rem;
   position: relative;
   overflow: hidden;
-  cursor: wait;
 }
 .profile .contact .resume .download-cv *:not(i) {
   color: white;
