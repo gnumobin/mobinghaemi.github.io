@@ -638,7 +638,16 @@ header .title {
   width: 35px;
   position: absolute;
   top: -9.5px;
+  right: -30px;
   color: var(--first-color);
+}
+.profile .me .author-name > .status-bg {
+  background-color: white;
+  width: 13px;
+  height: 13px;
+  top: 4px;
+  right: -19px;
+  position: absolute;
 }
 .profile .me .author-name::after {
   content: "JS Programmer";

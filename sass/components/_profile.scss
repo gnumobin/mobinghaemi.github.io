@@ -51,12 +51,23 @@
             position: relative;
         }
 
-        .author-name > .name-status {
-            width: 35px;
-            position: absolute;
-            top: -9.5px;
-            color: var(--first-color);
-        }
+        .author-name{
+            > .name-status {
+                width: 35px;
+                position: absolute;
+                top: -9.5px;
+                right: -30px;
+                color: var(--first-color);
+            }
+            > .status-bg {
+                background-color: white;
+                width: 13px;
+                height: 13px;
+                top: 4px;
+                right: -19px;
+                position: absolute;
+            }
+        } 
 
         .author-name::after {
             content: 'JS Programmer';
