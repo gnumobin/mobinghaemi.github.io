@@ -43,7 +43,7 @@ export const projectsData = [
     },
     {
         tag: 'web',
-        name: 'Portfolio',
+        name: 'Personal Website',
         link: 'https://github.com/mobinghaemi/mobinghaemi.github.io',
         picture: 'project-3-light.png',
         alt: 'This Website',

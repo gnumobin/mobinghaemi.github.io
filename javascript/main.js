@@ -1,4 +1,4 @@
-import { $ } from "./utils.js";
+import { $, disableScroll, enableScroll } from "./utils.js";
 // Variables
 const body = $('body');
 const overlay = $('.overlay');
@@ -52,6 +52,8 @@ function openMenuFunc() {
     overlay.style.display = 'block'
     posMenu.style.right = '0'
     menuIsOpen = true
+    // Disable (lock) scroll on the page
+    disableScroll();
 }
 // Switch Theme Func
 function themeSwitchFunc(e) {
@@ -126,6 +128,8 @@ function showAuthorPicture() {
 }
 // After Click on Overlay
 function overlayHandler() {
+    // unlock page scroll
+    enableScroll();
     overlay.style.display = 'none'
     imgShowEl.style.transform = 'translate(-50%, -50%) scale(0)'
     posMenu.style.right = 'calc(-350px + -4rem)';
@@ -151,3 +155,4 @@ document.addEventListener('keydown', e => {
             break;
     }
 })
+
